@@ -1,0 +1,1869 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramir Mendigo | Operations & Data Analytics Professional</title>
+
+    <style>
+      :root {
+        --primary: #005eb8;
+        --secondary: #2251ff;
+        --dark: #051c2c;
+        --gray: #6b7280;
+        --light: #e1e8ed;
+        --white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      img,
+      iframe,
+      object {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      header {
+        background:
+          linear-gradient(rgba(0, 94, 184, 0.85), rgba(0, 61, 122, 0.85)),
+          url("pexels tara.jpg") center/cover no-repeat;
+        background-blend-mode: multiply;
+        color: white;
+        text-align: center;
+        padding: 6rem 1rem 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 20% 80%,
+          rgba(34, 81, 255, 0.12) 0%,
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        margin-bottom: 0.4rem;
+      }
+      header p {
+        font-size: 1.3rem;
+        opacity: 0.95;
+        margin-bottom: 1rem;
+      }
+
+      .contact-info {
+        font-size: 1.1rem;
+      }
+      .contact-info a {
+        color: white;
+        text-decoration: none;
+      }
+      .contact-info a:hover {
+        color: var(--secondary);
+        text-decoration: underline;
+      }
+
+      html,
+      body {
+        overflow-x: visible;
+      }
+
+      nav {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        /* Light, semi-transparent white */
+        background: rgba(255, 255, 255, 0.7);
+        padding: 1rem;
+        text-align: center;
+        /* Subtle shadow for depth */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+        /* Thin light border to define the edge */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        /* The "Glass" magic */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      nav a {
+        margin: 0 1.2rem;
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--primary);
+      }
+
+      section {
+        max-width: 1000px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+      }
+
+      h2 {
+        color: var(--primary);
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        border-bottom: 3px solid var(--primary);
+        display: inline-block;
+        padding-bottom: 0.5rem;
+      }
+
+      /* .project-section {
+        margin: 2.5rem auto;
+        max-width: 1000px;
+        padding: 2rem;
+        border: 1px solid #e5e7eb;
+        border-left: 5px solid var(--primary);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      }*/
+
+      .job h3 {
+        color: var(--dark);
+        margin-bottom: 0.6rem;
+      }
+      .job .company {
+        color: var(--primary);
+        font-weight: 600;
+      }
+      .job .period {
+        color: var(--gray);
+        font-style: italic;
+      }
+
+      ul,
+      ol {
+        padding-left: 1.8rem;
+        margin: 0.8rem 0 1.5rem 0;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      /* .skill-item {
+        background: var(--white);
+        padding: 1.2rem;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        border: 1px solid #e5e7eb;
+     }*/
+
+      details {
+        margin-top: 1.5rem;
+      }
+
+      summary {
+        color: var(--primary);
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.1rem;
+        list-style: none;
+      }
+
+      summary::after {
+        content: " ▾";
+        margin-left: 0.5rem;
+      }
+
+      details[open] summary::after {
+        content: " ▴";
+      }
+
+      details > div {
+        margin-top: 1rem;
+        padding: 0.8rem 0 2rem 0;
+      }
+
+      footer {
+        background: var(--dark);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 4rem;
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2.2rem;
+        }
+        header p {
+          font-size: 1.1rem;
+        }
+        nav a {
+          margin: 0.5rem;
+          font-size: 0.95rem;
+        }
+        h2 {
+          font-size: 1.8rem;
+        }
+        h3 {
+          font-size: 1.4rem;
+        }
+        section {
+          padding: 0 1rem;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <!-- Simple Lightbox CSS -->
+    <style>
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow: auto;
+      }
+
+      .lightbox-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .close-lightbox {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close-lightbox:hover {
+        color: #bbb;
+      }
+
+      img.clickable-img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      img.clickable-img:hover {
+        transform: scale(1.03);
+      }
+    </style>
+
+    <!-- Lightbox for embeds -->
+    <style>
+              .embed-lightbox {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.92);
+                z-index: 9999;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem;
+                overflow: auto;
+              }
+
+              .embed-lightbox.active {
+                display: flex;
+              }
+
+              .embed-lightbox-content {
+                position: relative;
+                width: 95vw;
+                max-width: 1800px;
+                height: 90vh;
+                background: white;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+              }
+
+              .embed-lightbox iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+              }
+
+              .close-embed {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-size: 42px;
+                color: #fff;
+                cursor: pointer;
+                z-index: 10000;
+                background: rgba(0,0,0,0.4);
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 48px;
+              }
+
+              .close-embed:hover {
+                background: rgba(0,0,0,0.7);
+              }
+
+              .embed-wrapper {
+                position: relative;
+                cursor: pointer;
+              }
+
+              .embed-wrapper::after {
+                content: "Click to enlarge & interact";
+                position: absolute;
+                inset: 0;
+                background: rgba(0,0,0,0.4);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.3rem;
+                font-weight: 600;
+                opacity: 0;
+                transition: opacity 0.25s;
+                pointer-events: none;
+                border-radius: 8px;
+              }
+
+              .embed-wrapper:hover::after {
+                opacity: 1;
+              }
+
+              .site-quote {
+              max-width: 600px;
+              margin: 30px auto;
+              padding: 20px 40px;
+
+              /* This creates the frosted glass look */
+              background: rgba(255, 255, 255, 0.1); /* Very transparent white */
+              backdrop-filter: blur(10px);          /* Blurs the background image behind it */
+              -webkit-backdrop-filter: blur(10px); /* For Safari support */
+
+              /* Subtle border and rounding */
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              border-left: 6px solid #00d1ff; /* Keeps your signature blue accent */
+              border-radius: 12px;
+
+              /* Text Styling */
+              color: #ffffff; /* Changed to white so it's readable on the dark background */
+              font-family: "Georgia", serif;
+              font-style: italic;
+              font-size: 1.1rem;
+              text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Helps text pop against the image */
+            }
+
+            .skill-box {
+              background: white;
+              border-radius: 8px;
+              padding: 15px;
+              text-align: center;
+              border: 1px solid #e1e8ed;
+              transition: transform 0.3s ease;
+
+              display: flex;
+              align-items: center;      /* Vertically centers the text */
+              justify-content: center;   /* Horizontally centers the text */
+              min-height: 60px;
+            }
+
+            .skill-box:hover {
+              transform: translateY(-5px); /* Makes them pop when you hover! */
+              border-color: #004a99;        /* Uses your signature blue */
+            }
+
+            /* --- About Me Section --- */
+            #about {
+              background: transparent;
+              padding: 0px; /*40px;*/
+              border-radius: 12px;
+              box-shadow: none; /* 4px 20px rgba(0, 0, 0, 0.05);*/ /* Soft lift */
+              border-top: none/*5px solid #004a99; */ /* This matches your new hover color! */
+              line-height: 1.8; /* Makes it much easier to read */
+              max-width: 900px;
+              margin: 40px auto; /* Centers the bio on the page */
+            }
+
+            #about h2 {
+              color: #004a99;
+              margin-bottom: 20px;
+              font-size: 1.8rem;
+              letter-spacing: 1px;
+            }
+
+            /* --- Project Card Styling --- */
+            .project-card { /* Replace .project-card with the actual class your projects use */
+              /*background: white;*/
+              /*border-radius: 12px;*/
+              padding: 30px;
+              margin-bottom: 40px; /* Adds space between projects */
+              box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Very soft shadow */
+              transition: all 0.3s ease;
+              border: 1px solid #e1e8ed; /* Subtle border to define the edge */
+              background-color: rgba(255, 255, 255, 0.92); /* Dims the white to 92% */
+              border: 1px solid rgba(0, 74, 153, 0.1);    /* Adds a very faint blue-grey border */
+            }
+
+            .project-card:hover {
+              transform: translateY(-8px); /* Lifts the project up */
+              box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Deepens the shadow on hover */
+              border-color: #004a99; /* Uses your professional blue border */
+            }
+
+            /* Style the images inside the cards to look like framed art */
+            .project-card img {
+              border-radius: 6px;
+              border: 1px solid #f0f0f0;
+              margin: 20px 0;
+
+
+            }
+
+            .dashboard-frame {
+              background: #f8f9fa;
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid #e1e8ed;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+              margin: 20px 0;
+            }
+
+            /* The "Browser" header bar */
+            .dashboard-frame::before {
+              content: "•••";
+              display: block;
+              background: #e1e8ed;
+              padding: 8px 15px;
+              color: #aab8c2;
+              font-size: 1.2rem;
+              letter-spacing: 3px;
+            }
+
+            .dashboard-frame img {
+              width: 100%;
+              display: block;
+              transition: transform 0.5s ease;
+            }
+
+            /* Zoom effect on hover to show detail */
+            .dashboard-frame:hover img {
+              transform: scale(1.02);
+            }
+
+            /* --- Modal Styles --- */
+            .modal {
+              display: none; /* Hidden by default */
+              position: fixed;
+              z-index: 9999; /* Sits on top of everything */
+              left: 0; top: 0;
+              width: 100%; height: 100%;
+              background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+              cursor: zoom-out;
+            }
+
+            .modal-content {
+              margin: auto;
+              display: block;
+              max-width: 90%;
+              max-height: 90%;
+              position: absolute;
+              top: 50%; left: 50%;
+              transform: translate(-50%, -50%);
+              border-radius: 8px;
+              box-shadow: 0 0 20px rgba(0,210,255,0.3); /* Subtle blue glow */
+            }
+
+            .close-modal {
+              position: absolute;
+              top: 20px; right: 35px;
+              color: #fff;
+              font-size: 40px;
+              font-weight: bold;
+              cursor: pointer;
+            }
+
+            /* --- Industrial Project Frame --- */
+            .engineering-frame {
+              position: relative;
+              border-radius: 8px;
+              overflow: hidden;
+              box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+              border: 1px solid #333; /* Darker border for an industrial feel */
+              background: #000;
+            }
+
+            .engineering-frame img {
+              width: 100%;
+              display: block;
+              opacity: 0.9; /* Slightly dimmed to make the overlay text pop */
+              transition: opacity 0.3s ease;
+            }
+
+            .engineering-frame:hover img {
+              opacity: 1; /* Brightens on hover */
+            }
+
+            /* Glassmorphism Title Overlay */
+            .project-caption {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              background: rgba(0, 0, 0, 0.6);
+              backdrop-filter: blur(10px);
+              color: white;
+              padding: 15px 20px;
+              text-align: left;
+              border-top: 1px solid rgba(255,255,255,0.1);
+              background: rgba(0, 74, 153, 0.85); /* Use your signature professional blue! */
+              color: #ffffff; /* White text for high contrast */
+              border-top: 2px solid #00d1ff;
+            }
+
+            .project-caption h4 {
+              margin: 0;
+              font-size: 1rem;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              color: #00d1ff; /* Matches your signature blue */
+            }
+
+            /* --- Modal / Pop-up Image Stylings --- */
+            #fullImage {
+              max-width: 90%;
+              max-height: 85vh;
+              object-fit: contain;
+              /* This shadow helps the image "float" over the dark background */
+              box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+              /* This cyan border matches your header's "glow" lines */
+              border: 2px solid #00d1ff;
+            }
+
+            /* Only happens on laptops, not phones. Left Header */
+
+            /*@media (min-width: 992px) {
+              body {
+                display: flex;
+                align-items: flex-start;
+              }
+
+              header {
+                width: 300px;
+                height: 100vh;
+                position: sticky;
+                top: 0;
+                left: 0;
+                overflow-y: auto;
+                flex-shrink: 0;
+              }
+
+              main {
+                flex-grow: 1;
+                padding: 40px;
+              }
+            }*/
+
+            /*@media (min-width: 992px) {
+              body {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                margin: 0;
+                background-color: #f5f5f5;
+              }
+
+              header {
+                width: 300px;
+                height: 100vh;
+                position: sticky;
+                top: 0;
+                flex-shrink: 0;
+                z-index: 10;
+              }
+
+              main {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                padding: 40px;
+                gap: 30px;
+              }
+            } */
+
+            /* --- Dashboard Layout Fixes --- */
+            /*@media (min-width: 992px) {
+              body {
+                display: flex;
+                flex-direction: row;
+                margin: 0;
+                padding-top: 60px;
+              }
+
+              header {
+                width: 260px;
+                height: calc(100vh - 60px);
+                position: fixed;
+                top: 60px;
+                left: 0;
+                overflow: hidden;
+                z-index: 5;
+                padding: 20px;
+              }
+
+              main {
+                margin-left: 260px;
+                width: calc(100% - 260px);
+                padding: 40px;
+              }
+            }*/
+
+            /* This aligns header and main side-by-side */
+             /*@media (min-width: 992px) {
+
+              .page-container {
+                display: flex;
+                margin-top: 60px;
+                min-height: calc(100vh - 60px);
+              }
+
+              header {
+                width: 280px;
+                height: calc(100vh - 60px);
+                position: sticky;
+                top: 60px;
+                overflow-y: auto;
+                flex-shrink: 0;
+              }
+
+              main {
+                flex-grow: 1;
+                padding: 40px;
+
+                display: block;
+              }
+            }-->*/
+
+            /* @media (min-width: 992px) {
+              body {
+                display: grid;
+
+                grid-template-columns: 280px 1fr;
+
+                grid-template-rows: 60px 1fr auto;
+                margin: 0;
+                height: 100vh;
+              }
+
+
+              nav {
+
+                grid-row: 1;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(0, 74, 153, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+
+
+              header {
+                grid-column: 1;
+                grid-row: 1 / 4;
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                overflow: hidden;
+                z-index: 10;
+              }
+
+
+              main {
+                grid-column: 2;
+                grid-row: 2;
+                padding: 40px;
+                overflow-y: auto;
+              }
+
+
+              footer {
+                grid-column: 2;
+                grid-row: 3;
+                background: #001a33;
+                padding: 20px;
+                text-align: center;
+              }
+            }*/
+
+            /*@media (min-width: 992px) {
+
+              main {
+                width: 100% !important;
+                max-width: none !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                padding: 60px !important;
+              }
+
+
+              section {
+                width: 100% !important;
+                max-width: 1100px !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+              }
+
+
+              header {
+                min-width: 280px !important;
+                width: 280px !important;
+              }
+            }*/
+
+            /*@media (min-width: 992px) {
+              body {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                margin: 0;
+                min-height: 100vh;
+              }
+
+              header {
+                width: 280px !important;
+                min-width: 280px !important;
+                height: 100vh !important;
+                position: sticky !important;
+                top: 0;
+                flex-shrink: 0;
+              }
+
+              main {
+                flex-grow: 1;
+                display: block !important;
+                padding: 60px !important;
+                max-width: calc(100% - 280px);
+              }
+            }*/
+
+            @media (min-width: 992px) {
+              body {
+                display: flex !important;
+                margin: 0;
+                background-color: #f5f5f5; /* Your light grey body color */
+              }
+
+              /* 1. THE SIDEBAR: Sleeker and Fixed */
+              header {
+                width: 260px !important;
+                min-width: 260px !important;
+                height: 100vh !important;
+                position: sticky !important;
+                top: 0;
+                /*overflow-y: auto;*/ /* Allows the sidebar itself to scroll if the quote is long */
+                overflow-x: hidden;
+                flex-shrink: 0;
+                z-index: 1001; /* Higher than the nav so it clips perfectly */
+              }
+
+              /* Fix for the quote inside the sidebar so it doesn't cut off */
+              .site-quote {
+                padding: 15px !important;
+                font-size: 0.95rem !important;
+                margin: 20px 10px !important;
+              }
+
+              /* 2. THE NAV: Restore the Glass */
+              nav {
+                position: fixed !important;
+                top: 0;
+                right: 0;
+                width: calc(100% - 260px) !important; /* Starts EXACTLY where the sidebar ends */
+                height: 60px;
+                background: rgba(255, 255, 255, 0.7) !important; /* Semi-transparent */
+                backdrop-filter: blur(10px) !important; /* The Glass Effect */
+                -webkit-backdrop-filter: blur(10px);
+                z-index: 1000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+              }
+
+              /* 3. THE MAIN CONTENT: Aligned with the new Nav */
+              main {
+                flex-grow: 1;
+                margin-top: 60px; /* Space for the glass nav */
+                padding: 40px !important;
+                max-width: calc(100% - 260px);
+              }
+
+              /* 4. THE FOOTER: Fix the "Gap" and the "Awkward Big Bar" */
+              footer {
+                width: 100% !important;
+                background: #001a33 !important; /* Deep Navy */
+                padding: 20px 0 !important;
+                margin-top: 50px;
+                color: white;
+                font-size: 0.85rem;
+              }
+              @media (min-width: 992px) {
+              /* 1. Force Nav to reach the right edge */
+              nav {
+                width: calc(100% - 260px) !important;
+                right: 0 !important;
+                left: 260px !important; /* Forces it to start exactly after sidebar */
+              }
+
+              /* 2. THE "NO SCROLL" SIDEBAR FIX */
+              header {
+                overflow: hidden !important; /* Removes the sidebar scrollbar */
+                padding: 15px !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around; /* Spreads items out evenly to fit */
+              }
+
+              /* 3. FONT SHRINKING (Change these specific values) */
+              header h1 {
+                font-size: 2.0rem !important; /* Makes 'Ramir Mendigo' slightly smaller */
+                margin: 10px 0 !important;
+              }
+
+              header p {
+                font-size: 0.85rem !important; /* Shrinks the job title text */
+                line-height: 1.4 !important;
+              }
+
+              /* Shrink the Quote to fit the bottom */
+              .site-quote {
+                font-size: 0.8rem !important;
+                padding: 10px !important;
+                margin: 10px 0 !important;
+              }
+
+              /* Shrink the Photo slightly if needed */
+              header img {
+                width: 150px !important;
+                height: 150px !important;
+              }
+            }
+
+            }
+
+            @media (min-width: 992px) {
+        /* 1. Make Name Bigger and move it closer to photo */
+        header h1 {
+          font-size: 1.8rem !important; /* Slightly larger name */
+          margin-top: 10px !important;
+          margin-bottom: 5px !important; /* Reduces gap below name */
+        }
+
+        /* 2. Pull Title closer to photo */
+        header p:first-of-type {
+          margin-top: 0 !important;
+          margin-bottom: 10px !important;
+          font-weight: 500;
+        }
+
+        /* 3. Reduce size of Location/Contact info */
+        header p {
+          font-size: 0.8rem !important; /* Smaller text for Dubai/Contact */
+          margin: 5px 0 !important;
+          opacity: 0.9; /* Softens the color so it doesn't compete with your name */
+        }
+
+        /* 4. Tweak the Photo spacing */
+        header img {
+          margin-bottom: 10px !important;
+        }
+      }
+
+
+
+             /* Fixes the Top Menu Bar */
+              nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60px;         /* Fixed height for the menu */
+                background: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;         /* Keeps menu on top of everything */
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+              }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#soft-skills">Soft Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <header>
+      <h1>Ramir Mendigo</h1>
+      <img
+        src="Ramir2.jpg"
+        alt="Ramir Mendigo"
+        style="
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          border: 4px solid white;
+          margin: 1rem auto;
+          display: block;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        "
+      />
+      <p>
+        Operations Supervisor • Data-Driven Leader • Transitioning to Analytics
+        & Data Science
+      </p>
+      <div class="contact-info">
+        Dubai, UAE •
+        <a href="mailto:solace5710@gmail.com">solace5710@gmail.com</a> •
+        <a href="https://www.linkedin.com/in/ramirmendigo567" target="_blank"
+          >LinkedIn</a
+        >
+        <blockquote class="site-quote">
+          "Like energy, data is neutral unless given interpretation."
+        </blockquote>
+      </div>
+    </header>
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="project-section">
+          <p>
+            Experienced Operations Supervisor with over 10 years leading teams
+            and optimizing processes in hospitality, healthcare, and
+            entertainment. Recently completed Google Data Analytics Professional
+            Certificate — now integrating SQL, Power BI, Tableau, and data
+            insights into operations for better decision-making and performance
+            tracking.
+          </p>
+          <p>
+            Open to Operations Supervision, Administrative Leadership, or
+            Assistant Manager roles where strong coordination meets growing
+            analytics capabilities. Long-term goal: advance into research and
+            data science.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Key Skills & Tools</h2>
+        <div class="project-section">
+          <div class="skills-grid">
+            <div class="skill-box">Excel (Advanced)</div>
+            <div class="skill-box">SQL</div>
+            <div class="skill-box">Power BI</div>
+            <div class="skill-box">Tableau</div>
+            <div class="skill-box">Python & R</div>
+            <div class="skill-box">HTML / CSS</div>
+            <div class="skill-box">Data Cleaning & Visualization</div>
+            <div class="skill-box">KPI Reporting & Dashboards</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="soft-skills">
+        <h2>Soft Skills</h2>
+        <div class="project-section">
+          <div class="skills-grid">
+            <div class="skill-box">Leadership & Team Oversight</div>
+            <div class="skill-box">Problem Solving & Adaptability</div>
+            <div class="skill-box">Communication & Stakeholder Management</div>
+            <div class="skill-box">Attention to Detail</div>
+            <div class="skill-box">Conflict Resolution</div>
+            <div class="skill-box">Cross-Functional Collaboration</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Work Experience</h2>
+        <div class="project-section">
+          <div class="job">
+            <h3>Operations Supervisor</h3>
+            <p class="company">FnB Project Management Services – Dubai</p>
+            <p class="period">Jul 2023 – Aug 2025</p>
+            <ul>
+              <li>
+                Coordinated schedules, resources, and meetings for smooth
+                operations
+              </li>
+              <li>Managed documentation, inventory, and project plans</li>
+              <li>
+                Used data tools + analytics for performance tracking and website
+                SEO/optimization
+              </li>
+              <li>
+                Led multiple concurrent projects with strong prioritization
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Operations Team Leader</h3>
+            <p class="company">IMG Worlds of Adventure – Dubai</p>
+            <p class="period">Dec 2020 – Mar 2023</p>
+            <ul>
+              <li>
+                Trained and certified 100+ team members; enforced safety
+                standards
+              </li>
+              <li>
+                Managed staffing forecasts, daily allocations, and guest issue
+                resolution
+              </li>
+              <li>
+                Conducted job induction sessions and provided continuous
+                performance feedback
+              </li>
+              <li>
+                Served as Rides Duty Manager, resolving guest issues with
+                professionalism
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Operations Coordinator</h3>
+            <p class="company">IMG Worlds of Adventure – Dubai</p>
+            <p class="period">Mar 2017 – Dec 2020</p>
+            <ul>
+              <li>
+                Monitored 100+ CCTV feeds to ensure safety and incident
+                management
+              </li>
+              <li>
+                Created and sustained radio inventory tracking system for
+                operational readiness
+              </li>
+              <li>
+                Collected and analyzed throughput, downtime, and defect data for
+                reports
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Customer Care Executive</h3>
+            <p class="company">Life Line Hospital – Abu Dhabi</p>
+            <p class="period">Apr 2014 – Nov 2016</p>
+            <ul>
+              <li>
+                Handled patient registration and billing aligned with insurance
+                coverage
+              </li>
+              <li>
+                Recovered patient trust through strong issue resolution and
+                service recovery
+              </li>
+              <li>
+                Helped maintain revenue consistency for 3 top-performing
+                specialists
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Process Executive</h3>
+            <p class="company">GENPACT Services – Manila</p>
+            <p class="period">Mar 2011 – Dec 2013</p>
+            <ul>
+              <li>
+                Delivered first-call resolution with optimized call handling
+                times
+              </li>
+              <li>
+                Audited and evaluated call quality, training staff on identified
+                gaps
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Front Desk Supervisor</h3>
+            <p class="company">Princess Cruises – Los Angeles, CA</p>
+            <p class="period">Jan 2008 – Jan 2011</p>
+            <ul>
+              <li>
+                Managed front desk operations including
+                embarkation/disembarkation processes
+              </li>
+              <li>
+                Oversaw team rosters and guest service escalations as Night Duty
+                Manager
+              </li>
+              <li>
+                Liaised with port agents and customs for compliance and
+                documentation
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Selected Projects</h2>
+
+        <!-- Power BI -->
+        <div
+          class="project-section"
+          style="
+            margin: 2rem auto;
+            max-width: 1000px;
+            border: 1px solid #e5e7eb;
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+          "
+        >
+          <h3>
+            SaaS Subscription Cohort Analysis – Churn & Revenue Retention Study
+            (Power BI) (Feb 2026)
+          </h3>
+          <p style="margin-bottom: 1.5rem">
+            This Power BI project uses cohort analysis to reveal how a high 95%
+            paid conversion rate is being offset by significant customer and
+            revenue churn. I transformed these complex subscription trends into
+            actionable insights, providing a strategic roadmap to pivot from
+            aggressive acquisition to sustainable, retention-led growth.
+          </p>
+
+          <!-- Placeholder screenshot (upload your image as fnb-screenshot.jpg or change the src) -->
+          <!-- <div style="margin: 1.5rem 0; text-align: center;">
+    <img src="subscription_cohort_dashboard.png" alt="Subscription Cohort Dashboard" class="clickable-img" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    
+  </div>-->
+
+          <div style="margin: 2rem 0; text-align: center">
+            <!-- We added 'onclick' to trigger the modal instead of just a link -->
+            <div
+              class="dashboard-frame"
+              onclick="openModal('subscription_cohort_dashboard.png')"
+            >
+              <img
+                src="subscription_cohort_dashboard.png"
+                alt="SaaS Cohort Dashboard"
+              />
+            </div>
+            <p
+              style="
+                margin-top: 10px;
+                font-size: 0.85rem;
+                color: #666;
+                font-style: italic;
+              "
+            >
+              (Click image to expand view)
+            </p>
+          </div>
+
+          <!-- This is the hidden "Modal" structure that pops up -->
+          <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content" id="fullImage" />
+          </div>
+
+          <!-- <div class="dashboard-frame">
+  <img src="subscription_cohort_dashboard.png" alt="SaaS Cohort Dashboard">
+</div>-->
+
+          <!-- Collapsible About this Project -->
+          <details style="margin-top: 1.5rem">
+            <summary
+              style="
+                color: var(--primary);
+                font-weight: 600;
+                cursor: pointer;
+                font-size: 1.1rem;
+              "
+            >
+              About this Project
+            </summary>
+            <div style="margin-top: 1rem; padding: 0.8rem 0 2rem 0">
+              <p>
+                <strong>Tools:</strong> Power BI Desktop, DAX, Data Modeling,
+                Cohort Analysis Techniques
+              </p>
+              <p>
+                <strong>Role:</strong> Data Analyst (End-to-End Dashboard
+                Design, Data Modeling & Business Interpretation)
+              </p>
+
+              <p>
+                <strong>Goal:</strong>To analyze subscription performance using
+                cohort analysis and evaluate the impact of customer churn on
+                revenue growth and retention.
+              </p>
+
+              <p><strong>Objectives:</strong></p>
+              <ul>
+                <li>Calculate Customer Churn Rate and Revenue Churn Rate</li>
+                <li>
+                  Analyze Monthly Recurring Revenue (MRR) trends over time
+                </li>
+                <li>Compare Active vs Cancelled subscribers</li>
+                <li>Identify growth patterns in new cohorts</li>
+                <li>Translate churn behavior into business risk insights</li>
+              </ul>
+
+              <p><strong>Implementation:</strong></p>
+              <p>
+                Utilized a cleaned dataset from Kaggle (Jobs and Salaries in
+                Data Science) covering data from 2020–2023.
+              </p>
+              <ul>
+                <li>
+                  Built a structured data model linking subscription data with a
+                  master calendar table
+                </li>
+                <li>
+                  Added business interpretation section to translate metrics
+                  into actionable insights
+                </li>
+                <li>
+                  Developed DAX measures for:
+                  <ul>
+                    <li>Customer Churn Rate</li>
+                    <li>Revenue Churn Rate</li>
+                    <li>Current MRR</li>
+                    <li>Paid Rate %</li>
+                    <li>Active Subscriptions at Start of Month</li>
+                  </ul>
+                </li>
+                <li>
+                  Designed an executive-style dashboard with KPI cards, trend
+                  analysis, and cohort growth comparison
+                </li>
+              </ul>
+
+              <p><strong>Key Metrics Displayed:</strong></p>
+              <ul>
+                <li>Current MRR: $41.15K</li>
+                <li>Customer Churn Rate: 67.36%</li>
+                <li>Revenue Churn Rate: 65.30%</li>
+                <li>Paid Rate: 95.38%</li>
+                <li>Total Cohorts: 3.069K</li>
+                <li>Active vs Not Active Subscribers</li>
+                <li>New vs Cancelled Cohort Growth by Year</li>
+              </ul>
+
+              <p><strong>Recommendations:</strong></p>
+              <ol style="margin-bottom: 2.5rem">
+                <li>
+                  Despite strong paid conversion (95%), high customer and
+                  revenue churn (~65–67%) significantly limits long-term growth.
+                </li>
+                <li>
+                  Priority should be placed on improving retention by analyzing
+                  cancellation timing, customer lifetime behavior, and potential
+                  value gaps in service delivery.
+                </li>
+                <li>
+                  Reducing churn will have a stronger impact on sustainable MRR
+                  growth than increasing acquisition alone.
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+
+        <!-- Cyclistic – contained -->
+        <div
+          class="project-section"
+          style="
+            margin: 2rem auto;
+            max-width: 1000px;
+            border: 1px solid #e5e7eb;
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+          "
+        >
+          <h3>Cyclistic Bike Share Analysis (Feb 2024)</h3>
+          <p style="margin-bottom: 1.5rem">
+            <i
+              >Capstone Project for Google Data Analytics Professional
+              Certificate</i
+            ><br />
+            Cleaned and analyzed 12 months of ride data using Excel + Tableau.
+            Built dashboard showing member vs casual usage patterns and
+            recommended strategies to increase annual memberships.
+          </p>
+
+          <!-- Tableau Embed -->
+          <div
+            class="tableauPlaceholder"
+            id="viz1772559721130"
+            style="
+              position: relative;
+              width: 100%;
+              height: 0;
+              padding-bottom: 82.7%;
+            "
+          >
+            <noscript>
+              <a href="#">
+                <img
+                  alt="Cyclistic Bike Rides 2023"
+                  src="https://public.tableau.com/static/images/Cy/CyclisticBike2023_1/Dashboard1/1_rss.png"
+                  style="border: none"
+                />
+              </a>
+            </noscript>
+            <object
+              class="tableauViz"
+              style="display: none; width: 100%; height: 100%"
+            >
+              <param
+                name="host_url"
+                value="https%3A%2F%2Fpublic.tableau.com%2F"
+              />
+              <param name="embed_code_version" value="3" />
+              <param name="site_root" value="" />
+              <param name="name" value="CyclisticBike2023_1/Dashboard1" />
+              <param name="tabs" value="no" />
+              <param name="toolbar" value="yes" />
+              <param
+                name="static_image"
+                value="https://public.tableau.com/static/images/Cy/CyclisticBike2023_1/Dashboard1/1.png"
+              />
+              <param name="animate_transition" value="yes" />
+              <param name="display_static_image" value="yes" />
+              <param name="display_spinner" value="yes" />
+              <param name="display_overlay" value="yes" />
+              <param name="display_count" value="yes" />
+              <param name="language" value="en-US" />
+              <param name="filter" value="publish=yes" />
+            </object>
+          </div>
+
+          <script type="text/javascript">
+            var divElement = document.getElementById("viz1772559721130");
+            var vizElement = divElement.getElementsByTagName("object")[0];
+            vizElement.style.width = "100%";
+            var aspectRatio = 0.827;
+            vizElement.style.height =
+              divElement.offsetWidth * aspectRatio + "px";
+            var scriptElement = document.createElement("script");
+            scriptElement.src =
+              "https://public.tableau.com/javascripts/api/viz_v1.js";
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          </script>
+
+          <!-- Collapsible About -->
+          <details>
+            <summary>About this Project</summary>
+            <div style="margin-top: 0.8rem">
+              <p><strong>Tools:</strong> Tableau, Excel</p>
+              <p><strong>Role:</strong> Sole Contributor</p>
+              <p>
+                <strong>Goal:</strong> To uncover behavioral patterns between
+                annual and casual riders of Cyclistic bikes and provide
+                data-driven recommendations that support marketing strategies,
+                improve service utilization, and encourage the conversion of
+                casual users into annual members.
+              </p>
+
+              <p><strong>Objectives:</strong></p>
+              <ul>
+                <li>
+                  Compare usage trends (frequency, duration, and ride timing)
+                  between annual and casual riders
+                </li>
+                <li>
+                  Recommend actions to increase annual memberships and optimize
+                  bike resource allocation
+                </li>
+              </ul>
+
+              <p><strong>Implementation:</strong></p>
+              <p>
+                This project used a 12-month dataset of Cyclistic bike riders
+                (2023, Chicago), provided by the Google Data Analytics Capstone
+                Project.
+              </p>
+              <ul>
+                <li>Cleaned and analyzed the dataset using MS Excel</li>
+                <li>
+                  Built an interactive dashboard in Tableau to visualize user
+                  behavior, ride durations, and popular bike usage
+                </li>
+                <li>
+                  Created key insights to support marketing and operations
+                  decisions
+                </li>
+              </ul>
+
+              <p><strong>Key Metrics Displayed:</strong></p>
+              <ul>
+                <li>Total rides in 2023</li>
+                <li>Average ride duration by user type</li>
+                <li>Total annual ride hours</li>
+                <li>Ride counts for the most-used bike type</li>
+              </ul>
+
+              <p><strong>Recommendations:</strong></p>
+              <ol style="margin-bottom: 2.5rem">
+                <li>
+                  Improve ride efficiency by analyzing long ride durations
+                </li>
+                <li>
+                  Evaluate bike preference and replicate features in future
+                  procurement
+                </li>
+                <li>Scale operations in response to rising ride volume</li>
+                <li>Encourage shorter rides with pricing strategies</li>
+                <li>
+                  Rebalance bike availability based on underutilization insights
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+
+        <!-- Data Science Project – contained -->
+        <div
+          class="project-section"
+          style="
+            margin: 2rem auto;
+            max-width: 1000px;
+            border: 1px solid #e5e7eb;
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+          "
+        >
+          <h3>Data Science Jobs & Salaries (Feb 2024)</h3>
+          <p style="margin-bottom: 1.5rem">
+            SQL + Excel + Tableau analysis of global salaries across 70+
+            countries. Created interactive dashboard for benchmarking and
+            workforce planning.
+          </p>
+
+          <div
+            style="
+              width: 100%;
+              margin-top: 2rem;
+              border-top: 1px solid #e5e7eb;
+              padding-top: 1.5rem;
+            "
+          >
+            <iframe
+              src="https://public.tableau.com/views/JobsSalaryinDataScience/Dashboard1?:embed=y&:showVizHome=no&:toolbar=yes&:display_count=yes&:language=en-US&:device=desktop"
+              width="100%"
+              height="800px"
+              frameborder="0"
+              allowfullscreen
+              style="
+                border: none;
+                display: block;
+                width: 100%;
+                min-height: 800px;
+              "
+            >
+            </iframe>
+          </div>
+          <!-- Collapsible About -->
+          <details>
+            <summary>About this Project</summary>
+            <div style="margin-top: 0.8rem">
+              <p><strong>Tools:</strong> SQL, Tableau, Excel</p>
+              <p><strong>Role:</strong> Data Analyst</p>
+              <p>
+                <strong>Goal:</strong> To analyze global job trends and salary
+                benchmarks in the field of data science across multiple
+                countries, providing insights to support career planning,
+                compensation strategy, and workforce analysis.
+              </p>
+
+              <p><strong>Objectives:</strong></p>
+              <ul>
+                <li>
+                  Understand the growth trajectory of data science jobs globally
+                </li>
+                <li>
+                  Identify roles with the most promising compensation
+                  opportunities
+                </li>
+              </ul>
+
+              <p><strong>Implementation:</strong></p>
+              <p>
+                Utilized a cleaned dataset from Kaggle (Jobs and Salaries in
+                Data Science) covering data from 2020–2023.
+              </p>
+              <ul>
+                <li>Used SQL for data retrieval, filtering, and aggregation</li>
+                <li>
+                  Applied Excel for additional metric review and formatting
+                </li>
+                <li>
+                  Built an interactive Tableau dashboard to visualize job
+                  counts, salary distributions, and hiring patterns across
+                  regions and roles
+                </li>
+              </ul>
+
+              <p><strong>Key Metrics Displayed:</strong></p>
+              <ul>
+                <li>Total number of jobs and job availability</li>
+                <li>Average, minimum, and maximum salaries (USD)</li>
+                <li>Country-wise and role-based data segmentation</li>
+              </ul>
+
+              <p><strong>Recommendations:</strong></p>
+              <ol style="margin-bottom: 2.5rem">
+                <li>
+                  Job Market Trends: A rising job count and high job
+                  availability suggests a strong, growing demand for data
+                  professionals globally.
+                </li>
+                <li>
+                  Salary Benchmarking: Salary ranges help set compensation
+                  expectations and can guide wage negotiation and policy.
+                </li>
+                <li>
+                  Career Planning: Significant gaps between average and max
+                  salaries point to high earning potential in specific roles or
+                  markets.
+                </li>
+                <li>
+                  Recruitment Strategies: High job availability with stagnant
+                  job creation may reflect turnover or skills mismatch.
+                </li>
+                <li>
+                  Economic Indicators: Salary and job trends can signal broader
+                  economic patterns across the data sector.
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+
+        <!-- FnB Project -->
+        <div
+          class="project-section"
+          style="
+            margin: 2rem auto;
+            max-width: 1000px;
+            border: 1px solid #e5e7eb;
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+          "
+        >
+          <h3>FnB Project Management Website (Nov 2023)</h3>
+          <p style="margin-bottom: 1.5rem">
+            Developed the official company website using Wix as the main
+            platform, with custom HTML/CSS enhancements and full SEO
+            optimization.
+          </p>
+
+          <!-- Placeholder screenshot (upload your image as fnb-screenshot.jpg or change the src) -->
+          <!--<div style="margin: 1.5rem 0; text-align: center">
+          <img
+            src="FnB.png"
+            alt="Project screenshot" class="clickable-img" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"/>
+          <p style="margin-top: 0.8rem; font-style: italic; color: var(--gray)">
+            Screenshot of the live website (now offline due to company closure)
+          </p>
+        </div>-->
+
+          <div style="margin: 3rem 0; text-align: center">
+            <div
+              class="engineering-frame"
+              onclick="openModal('FnB.png')"
+              style="cursor: pointer"
+            >
+              <img src="FnB.png" alt="FnB Project Management Services" />
+
+              <!-- The Blueprint Caption -->
+              <div class="project-caption">
+                <h4>Operational Infrastructure & Web Presence</h4>
+                <p style="margin: 5px 0 0; font-size: 0.8rem; opacity: 0.8">
+                  Operations Management • Digital Strategy • UAE Theme Park
+                  Maintenance
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collapsible About this Project -->
+          <details style="margin-top: 1.5rem">
+            <summary
+              style="
+                color: var(--primary);
+                font-weight: 600;
+                cursor: pointer;
+                font-size: 1.1rem;
+              "
+            >
+              About this Project
+            </summary>
+            <div style="margin-top: 1rem; padding: 0.8rem 0 2rem 0">
+              <p><strong>Tools:</strong> Wix, HTML, Google Search Console</p>
+              <p><strong>Role:</strong> Web Designer & SEO Coordinator</p>
+
+              <p>
+                <strong>Goal:</strong> To design and launch the official website
+                of FnB Project Management Services, and implement SEO strategies
+                to improve the company’s visibility and indexing on Google.
+              </p>
+
+              <p><strong>Project Summary:</strong></p>
+              <p>
+                In this project, I collaborated closely with the client to
+                understand their brand identity, service offerings, and
+                functional requirements. Using Wix, I designed and developed a
+                responsive, user-friendly website aligned with the company’s
+                image and operations.
+              </p>
+              <p>
+                Beyond visual design, I focused on Search Engine Optimization
+                (SEO)—optimizing structure, metadata, and keyword placement to
+                increase discoverability. The site was then registered and
+                indexed using Google Search Console, successfully enhancing the
+                company's digital footprint.
+              </p>
+              <p>
+                The project resulted in a fully functional online presence that
+                met all technical, aesthetic, and strategic goals—supporting
+                both brand credibility and market visibility.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education & Certifications</h2>
+        <div class="project-section">
+          <p>
+            <strong
+              >Professional Certificate in Advanced Data Analytics
+              (Ongoing)</strong
+            >
+            – Google / Coursera
+          </p>
+          <p>
+            <strong>Professional Certificate in Data Analytics</strong> – Google
+            / Coursera (Sep 2023 – Feb 2024)
+          </p>
+          <p>
+            <strong>Bachelor’s in Computer Science</strong> – AMA Computer
+            University, Manila (1998–2001)
+          </p>
+          <p>
+            <strong>Key Certifications:</strong> Google Data Analytics, Lean Six
+            Sigma Green Belt, Power BI (Pragmatic Works), Project Management
+          </p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="project-section" style="text-align: center">
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:solace5710@gmail.com">solace5710@gmail.com</a>
+          </p>
+          <!-- <p><strong>Phone:</strong> +971 56 237 9184</p>-->
+          <p>
+            <strong>LinkedIn:</strong>
+            <a
+              href="https://www.linkedin.com/in/ramirmendigo567"
+              target="_blank"
+              >linkedin.com/in/ramirmendigo567</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          © 2026 R Mendigo • Built with HTML & CSS • Always learning and
+          optimizing
+        </p>
+      </footer>
+
+      <!-- Lightbox container -->
+      <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="close-lightbox" onclick="closeLightbox(event)">×</span>
+        <img class="lightbox-content" id="lightbox-img" />
+      </div>
+
+      <script>
+        // Open lightbox
+        document.querySelectorAll(".clickable-img").forEach((img) => {
+          img.addEventListener("click", function () {
+            document.getElementById("lightbox-img").src = this.src;
+            document.getElementById("lightbox").style.display = "block";
+          });
+        });
+
+        // Close lightbox
+        function closeLightbox(e) {
+          if (
+            e.target.id === "lightbox" ||
+            e.target.className === "close-lightbox"
+          ) {
+            document.getElementById("lightbox").style.display = "none";
+          }
+        }
+
+        // Close with Esc key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            document.getElementById("lightbox").style.display = "none";
+          }
+        });
+      </script>
+
+      <script>
+        // Auto-collapse <details> AFTER the user has scrolled PAST it
+        const detailsElements = document.querySelectorAll("details");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              // Only auto-collapse if it is currently open AND fully scrolled past (not intersecting)
+              if (!entry.isIntersecting && entry.target.open === true) {
+                entry.target.open = false; // Collapse it
+              }
+            });
+          },
+          {
+            threshold: 0.01, // Triggers when almost nothing is visible
+            rootMargin: "0px 0px 100% 0px", // Triggers when element is completely above viewport (scrolled past)
+          },
+        );
+
+        detailsElements.forEach((detail) => {
+          observer.observe(detail);
+        });
+
+        // Optional: If user manually expands it, respect that for a moment — but observer will close it later
+        detailsElements.forEach((detail) => {
+          detail.addEventListener("toggle", () => {
+            // User interacted — no extra action needed, observer will handle later
+          });
+        });
+      </script>
+
+      <!-- Embed Lightbox Container -->
+      <div id="embedLightbox" class="embed-lightbox">
+        <span class="close-embed" onclick="closeEmbedLightbox()">×</span>
+        <div class="embed-lightbox-content" id="embedContent"></div>
+      </div>
+
+      <script>
+        function openEmbedLightbox(src) {
+          const content = document.getElementById("embedContent");
+          content.innerHTML = `<iframe src="${src}" allowfullscreen></iframe>`;
+          document.getElementById("embedLightbox").classList.add("active");
+        }
+
+        function closeEmbedLightbox() {
+          document.getElementById("embedLightbox").classList.remove("active");
+          document.getElementById("embedContent").innerHTML = "";
+        }
+
+        // Attach click handler to all embed wrappers
+        document.querySelectorAll(".embed-wrapper").forEach((wrapper) => {
+          wrapper.addEventListener("click", () => {
+            const iframe = wrapper.querySelector("iframe");
+            if (iframe) {
+              openEmbedLightbox(iframe.src);
+            }
+          });
+        });
+      </script>
+
+      <script>
+        function openModal(imgSrc) {
+          document.getElementById("imageModal").style.display = "block";
+          document.getElementById("fullImage").src = imgSrc;
+        }
+
+        function closeModal() {
+          document.getElementById("imageModal").style.display = "none";
+        }
+      </script>
+    </main>
+  </body>
+</html>
