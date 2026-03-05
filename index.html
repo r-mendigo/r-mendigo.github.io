@@ -951,6 +951,33 @@
     justify-content: flex-start !important;
     padding: 10px !important;
   }
+  /* --- Professional Mobile Swipable Nav --- */
+nav {
+  display: flex !important;
+  flex-wrap: nowrap !important; /* Prevents links from dropping to a second line */
+  overflow-x: auto !important; /* Enables the horizontal swipe */
+  -webkit-overflow-scrolling: touch; /* Makes the swipe feel "rubbery" and smooth on iPhones */
+  padding: 15px 10px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  gap: 20px; /* Space between links so they are easy to tap */
+  border-bottom: 1px solid rgba(0, 74, 153, 0.1);
+}
+
+/* Hide the ugly scrollbar but keep the swipe working */
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+nav a {
+  flex: 0 0 auto; /* Prevents the text from squishing */
+  font-size: 0.9rem !important;
+  font-weight: 500;
+  color: #004a99 !important; /* Your professional blue */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 }
 
 /* --- Fix for Project Cards on Mobile --- */
@@ -1920,5 +1947,6 @@
     </main>
   </body>
 </html>
+
 
 
