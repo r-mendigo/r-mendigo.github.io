@@ -953,6 +953,34 @@
   }
 }
 
+/* --- Fix for Project Cards on Mobile --- */
+.engineering-frame {
+  height: auto !important; /* Let the height grow based on content */
+  margin-bottom: 20px;
+}
+
+.engineering-frame img {
+  height: 250px !important; /* Fixed height for mobile to keep it consistent */
+  object-fit: cover !important; /* Crops the image nicely instead of squishing it */
+  object-position: center;
+}
+
+.project-caption {
+  position: relative !important; /* Moves caption BELOW image on small screens */
+  background: #001a33 !important; /* Your signature deep blue */
+  padding: 15px !important;
+  height: auto !important;
+}
+
+.project-caption h4 {
+  font-size: 0.9rem !important; /* Shorter titles for small screens */
+  margin-bottom: 5px !important;
+}
+
+.project-caption p {
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
+}
 
 
              /* Fixes the Top Menu Bar */
@@ -1892,4 +1920,5 @@
     </main>
   </body>
 </html>
+
 
