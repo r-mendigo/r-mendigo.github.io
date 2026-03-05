@@ -927,6 +927,31 @@
           margin-bottom: 10px !important;
         }
       }
+@media (max-width: 991px) {
+  /* 1. Reset the Main container so it's not 'pushed' to the right */
+  main {
+    margin-left: 0 !important;
+    padding: 20px !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  /* 2. Make all sections (About, Skills, etc.) take the full width */
+  section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 30px 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 3. Center the Nav links so they don't look 'cut off' */
+  nav {
+    overflow-x: auto; /* Allows users to swipe the menu left/right */
+    white-space: nowrap;
+    justify-content: flex-start !important;
+    padding: 10px !important;
+  }
+}
 
 
 
@@ -1867,3 +1892,4 @@
     </main>
   </body>
 </html>
+
