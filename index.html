@@ -1,15 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCZTNQ1M10"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RCZTNQ1M10');
-</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ramir Mendigo | Operations & Data Analytics Professional</title>
@@ -22,6 +13,15 @@
         --gray: #6b7280;
         --light: #e1e8ed;
         --white: #ffffff;
+        --nutri-emerald-600: #059669;
+        --nutri-emerald-700: #047857;
+        --nutri-emerald-200: #a7f3d0;
+        --nutri-emerald-100: #d1fae5;
+        --nutri-emerald-300: #6ee7b7;
+        --nutri-emerald-800: #065f46;
+        --nutri-bluegray-600: #475569;
+        --nutri-bluegray-400: #94a3b8;
+        --nutri-bluegray-500: #64748b;
       }
 
       * {
@@ -43,14 +43,29 @@
         line-height: 1.6;
       }
 
-      img,
-      iframe,
-      object {
+      /* img,
+            iframe,
+            object {
+              max-width: 100%;
+              height: auto;
+              display: block;
+            }*/
+
+      img {
         max-width: 100%;
         height: auto;
         display: block;
       }
 
+      iframe,
+      object {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: none;
+      }
+
+      /* Fixed Sidebar Header */
       header {
         background:
           linear-gradient(rgba(0, 94, 184, 0.85), rgba(0, 61, 122, 0.85)),
@@ -58,9 +73,17 @@
         background-blend-mode: multiply;
         color: white;
         text-align: center;
-        padding: 6rem 1rem 4rem;
-        position: relative;
-        overflow: hidden;
+        padding: 2rem 1rem;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 280px;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
       header::before {
@@ -75,66 +98,76 @@
         pointer-events: none;
       }
 
+      header > * {
+        position: relative;
+        z-index: 1;
+      }
+
       header h1 {
-        font-size: 3rem;
-        margin-bottom: 0.4rem;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
       }
       header p {
-        font-size: 1.3rem;
+        font-size: 1rem;
         opacity: 0.95;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
       }
 
       .contact-info {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
+        margin-top: 1rem;
       }
       .contact-info a {
         color: white;
         text-decoration: none;
+        display: block;
+        margin: 0.3rem 0;
       }
       .contact-info a:hover {
         color: var(--secondary);
         text-decoration: underline;
       }
 
-      html,
-      body {
-        overflow-x: visible;
-      }
-
+      /* Fixed Nav - Top horizontal */
       nav {
-        position: -webkit-sticky;
-        position: sticky;
+        position: fixed;
         top: 0;
-        /* Light, semi-transparent white */
-        background: rgba(255, 255, 255, 0.7);
+        left: 280px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
         padding: 1rem;
         text-align: center;
-        /* Subtle shadow for depth */
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        /* Thin light border to define the edge */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        /* The "Glass" magic */
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       }
       nav a {
-        margin: 0 1.2rem;
+        margin: 0 1rem;
         color: var(--dark);
         text-decoration: none;
         font-weight: 600;
         transition: color 0.3s;
+        font-size: 0.9rem;
       }
 
       nav a:hover {
         color: var(--primary);
       }
 
+      /* Main content offset for sidebar */
+      main {
+        margin-left: 280px;
+        padding-top: 60px;
+        min-height: 100vh;
+      }
+
       section {
         max-width: 1000px;
         margin: 3rem auto;
-        padding: 0 1rem;
+        padding: 0 2rem;
       }
 
       h2 {
@@ -146,17 +179,6 @@
         display: inline-block;
         padding-bottom: 0.5rem;
       }
-
-      /* .project-section {
-        margin: 2.5rem auto;
-        max-width: 1000px;
-        padding: 2rem;
-        border: 1px solid #e5e7eb;
-        border-left: 5px solid var(--primary);
-        border-radius: 8px;
-        background: var(--white);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-      }*/
 
       .job h3 {
         color: var(--dark);
@@ -186,15 +208,6 @@
         gap: 1rem;
       }
 
-      /* .skill-item {
-        background: var(--white);
-        padding: 1.2rem;
-        border-radius: 6px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        text-align: center;
-        border: 1px solid #e5e7eb;
-     }*/
-
       details {
         margin-top: 1.5rem;
       }
@@ -221,42 +234,246 @@
         padding: 0.8rem 0 2rem 0;
       }
 
-      footer {
-        background: var(--dark);
+      /* Project Card Styling - Unified */
+      .project-card {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 12px;
+        border: 1px solid rgba(0, 74, 153, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        border-color: #004a99;
+      }
+
+      .project-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-icon {
+        width: 56px;
+        height: 56px;
+        background: var(--nutri-emerald-600);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: white;
+        font-size: 1.75rem;
+        font-weight: bold;
+        flex-shrink: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-title-wrap {
+        flex: 1;
+      }
+
+      .project-title-wrap h3 {
+        color: var(--nutri-emerald-700);
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+        line-height: 1.3;
+      }
+
+      .project-title-wrap p {
+        color: var(--nutri-bluegray-600);
+        font-size: 0.95rem;
+      }
+
+      .project-desc {
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+
+      /* .viz-container {
+              width: 100%;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+              border: 1px solid #e1e8ed;
+              background: white;
+              position: relative;
+            }
+
+            .viz-container img,
+            .viz-container iframe {
+              width: 100%;
+              display: block;
+              border: none;
+            }*/
+
+      .viz-container {
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+        border: 1px solid #e1e8ed;
+        background: #f8fafc;
+        position: relative;
+      }
+
+      .viz-container iframe,
+      .viz-container object,
+      .viz-container img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .viz-caption {
         text-align: center;
-        padding: 2rem;
-        margin-top: 4rem;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+        color: var(--nutri-bluegray-500);
+        font-style: italic;
       }
 
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 2.2rem;
-        }
-        header p {
-          font-size: 1.1rem;
-        }
-        nav a {
-          margin: 0.5rem;
-          font-size: 0.95rem;
-        }
-        h2 {
-          font-size: 1.8rem;
-        }
-        h3 {
-          font-size: 1.4rem;
-        }
-        section {
-          padding: 0 1rem;
-        }
-        .skills-grid {
-          grid-template-columns: 1fr;
+      /* Aspect Ratios */
+      .aspect-16-9 {
+        aspect-ratio: 16/9;
+      }
+
+      .aspect-4-5 {
+        aspect-ratio: 4/5;
+      }
+
+      .aspect-3-2 {
+        aspect-ratio: 3/2;
+      }
+
+      @media (min-width: 768px) {
+        .md-aspect-16-9 {
+          aspect-ratio: 16/9;
         }
       }
-    </style>
 
-    <!-- Simple Lightbox CSS -->
-    <style>
+      /* Engineering Frame for FnB */
+      .engineering-frame {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .engineering-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+        opacity: 0.9;
+      }
+
+      .engineering-frame:hover img {
+        opacity: 1;
+      }
+
+      .project-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 74, 153, 0.85);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 15px 20px;
+        text-align: left;
+        border-top: 2px solid #00d1ff;
+      }
+
+      .project-caption h4 {
+        margin: 0;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #00d1ff;
+      }
+
+      .project-caption p {
+        margin: 5px 0 0;
+        font-size: 0.8rem;
+        opacity: 0.9;
+      }
+
+      /* Dashboard Frame for Power BI */
+      .dashboard-frame {
+        width: 100%;
+        height: 100%;
+        background: #f8f9fa;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .dashboard-frame::before {
+        content: "•••";
+        display: block;
+        background: #e1e8ed;
+        padding: 8px 15px;
+        color: #aab8c2;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+      }
+
+      .dashboard-frame img {
+        width: 100%;
+        height: calc(100% - 40px);
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .dashboard-frame:hover img {
+        transform: scale(1.02);
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        cursor: zoom-out;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+        border: 2px solid #00d1ff;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      /* Lightbox */
       .lightbox {
         display: none;
         position: fixed;
@@ -294,767 +511,131 @@
         color: #bbb;
       }
 
-      img.clickable-img {
-        cursor: pointer;
-        transition: transform 0.2s;
+      /* Skill Box */
+      .skill-box {
+        background: white;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #e1e8ed;
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60px;
       }
 
-      img.clickable-img:hover {
-        transform: scale(1.03);
+      .skill-box:hover {
+        transform: translateY(-5px);
+        border-color: #004a99;
       }
-    </style>
 
-    <!-- Lightbox for embeds -->
-    <style>
-              .embed-lightbox {
-                display: none;
-                position: fixed;
-                inset: 0;
-                background: rgba(0,0,0,0.92);
-                z-index: 9999;
-                align-items: center;
-                justify-content: center;
-                padding: 2rem;
-                overflow: auto;
-              }
-
-              .embed-lightbox.active {
-                display: flex;
-              }
-
-              .embed-lightbox-content {
-                position: relative;
-                width: 95vw;
-                max-width: 1800px;
-                height: 90vh;
-                background: white;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-              }
-
-              .embed-lightbox iframe {
-                width: 100%;
-                height: 100%;
-                border: none;
-              }
-
-              .close-embed {
-                position: absolute;
-                top: 15px;
-                right: 20px;
-                font-size: 42px;
-                color: #fff;
-                cursor: pointer;
-                z-index: 10000;
-                background: rgba(0,0,0,0.4);
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                text-align: center;
-                line-height: 48px;
-              }
-
-              .close-embed:hover {
-                background: rgba(0,0,0,0.7);
-              }
-
-              .embed-wrapper {
-                position: relative;
-                cursor: pointer;
-              }
-
-              .embed-wrapper::after {
-                content: "Click to enlarge & interact";
-                position: absolute;
-                inset: 0;
-                background: rgba(0,0,0,0.4);
-                color: white;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.3rem;
-                font-weight: 600;
-                opacity: 0;
-                transition: opacity 0.25s;
-                pointer-events: none;
-                border-radius: 8px;
-              }
-
-              .embed-wrapper:hover::after {
-                opacity: 1;
-              }
-
-              .site-quote {
-              max-width: 600px;
-              margin: 30px auto;
-              padding: 20px 40px;
-
-              /* This creates the frosted glass look */
-              background: rgba(255, 255, 255, 0.1); /* Very transparent white */
-              backdrop-filter: blur(10px);          /* Blurs the background image behind it */
-              -webkit-backdrop-filter: blur(10px); /* For Safari support */
-
-              /* Subtle border and rounding */
-              border: 1px solid rgba(255, 255, 255, 0.2);
-              border-left: 6px solid #00d1ff; /* Keeps your signature blue accent */
-              border-radius: 12px;
-
-              /* Text Styling */
-              color: #ffffff; /* Changed to white so it's readable on the dark background */
-              font-family: "Georgia", serif;
-              font-style: italic;
-              font-size: 1.1rem;
-              text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Helps text pop against the image */
-            }
-
-            .skill-box {
-              background: white;
-              border-radius: 8px;
-              padding: 15px;
-              text-align: center;
-              border: 1px solid #e1e8ed;
-              transition: transform 0.3s ease;
-
-              display: flex;
-              align-items: center;      /* Vertically centers the text */
-              justify-content: center;   /* Horizontally centers the text */
-              min-height: 60px;
-            }
-
-            .skill-box:hover {
-              transform: translateY(-5px); /* Makes them pop when you hover! */
-              border-color: #004a99;        /* Uses your signature blue */
-            }
-
-            /* --- About Me Section --- */
-            #about {
-              background: transparent;
-              padding: 0px; /*40px;*/
-              border-radius: 12px;
-              box-shadow: none; /* 4px 20px rgba(0, 0, 0, 0.05);*/ /* Soft lift */
-              border-top: none/*5px solid #004a99; */ /* This matches your new hover color! */
-              line-height: 1.8; /* Makes it much easier to read */
-              max-width: 900px;
-              margin: 40px auto; /* Centers the bio on the page */
-            }
-
-            #about h2 {
-              color: #004a99;
-              margin-bottom: 20px;
-              font-size: 1.8rem;
-              letter-spacing: 1px;
-            }
-
-            /* --- Project Card Styling --- */
-            .project-card { /* Replace .project-card with the actual class your projects use */
-              /*background: white;*/
-              /*border-radius: 12px;*/
-              padding: 30px;
-              margin-bottom: 40px; /* Adds space between projects */
-              box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Very soft shadow */
-              transition: all 0.3s ease;
-              border: 1px solid #e1e8ed; /* Subtle border to define the edge */
-              background-color: rgba(255, 255, 255, 0.92); /* Dims the white to 92% */
-              border: 1px solid rgba(0, 74, 153, 0.1);    /* Adds a very faint blue-grey border */
-            }
-
-            .project-card:hover {
-              transform: translateY(-8px); /* Lifts the project up */
-              box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Deepens the shadow on hover */
-              border-color: #004a99; /* Uses your professional blue border */
-            }
-
-            /* Style the images inside the cards to look like framed art */
-            .project-card img {
-              border-radius: 6px;
-              border: 1px solid #f0f0f0;
-              margin: 20px 0;
-
-
-            }
-
-            .dashboard-frame {
-              background: #f8f9fa;
-              border-radius: 12px;
-              overflow: hidden;
-              border: 1px solid #e1e8ed;
-              box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-              margin: 20px 0;
-            }
-
-            /* The "Browser" header bar */
-            .dashboard-frame::before {
-              content: "•••";
-              display: block;
-              background: #e1e8ed;
-              padding: 8px 15px;
-              color: #aab8c2;
-              font-size: 1.2rem;
-              letter-spacing: 3px;
-            }
-
-            .dashboard-frame img {
-              width: 100%;
-              display: block;
-              transition: transform 0.5s ease;
-            }
-
-            /* Zoom effect on hover to show detail */
-            .dashboard-frame:hover img {
-              transform: scale(1.02);
-            }
-
-            /* --- Modal Styles --- */
-            .modal {
-              display: none; /* Hidden by default */
-              position: fixed;
-              z-index: 9999; /* Sits on top of everything */
-              left: 0; top: 0;
-              width: 100%; height: 100%;
-              background-color: rgba(0, 0, 0, 0.9); /* Dark background */
-              cursor: zoom-out;
-            }
-
-            .modal-content {
-              margin: auto;
-              display: block;
-              max-width: 90%;
-              max-height: 90%;
-              position: absolute;
-              top: 50%; left: 50%;
-              transform: translate(-50%, -50%);
-              border-radius: 8px;
-              box-shadow: 0 0 20px rgba(0,210,255,0.3); /* Subtle blue glow */
-            }
-
-            .close-modal {
-              position: absolute;
-              top: 20px; right: 35px;
-              color: #fff;
-              font-size: 40px;
-              font-weight: bold;
-              cursor: pointer;
-            }
-
-            /* --- Industrial Project Frame --- */
-            .engineering-frame {
-              position: relative;
-              border-radius: 8px;
-              overflow: hidden;
-              box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-              border: 1px solid #333; /* Darker border for an industrial feel */
-              background: #000;
-            }
-
-            .engineering-frame img {
-              width: 100%;
-              display: block;
-              opacity: 0.9; /* Slightly dimmed to make the overlay text pop */
-              transition: opacity 0.3s ease;
-            }
-
-            .engineering-frame:hover img {
-              opacity: 1; /* Brightens on hover */
-            }
-
-            /* Glassmorphism Title Overlay */
-            .project-caption {
-              position: absolute;
-              bottom: 0;
-              width: 100%;
-              background: rgba(0, 0, 0, 0.6);
-              backdrop-filter: blur(10px);
-              color: white;
-              padding: 15px 20px;
-              text-align: left;
-              border-top: 1px solid rgba(255,255,255,0.1);
-              background: rgba(0, 74, 153, 0.85); /* Use your signature professional blue! */
-              color: #ffffff; /* White text for high contrast */
-              border-top: 2px solid #00d1ff;
-            }
-
-            .project-caption h4 {
-              margin: 0;
-              font-size: 1rem;
-              letter-spacing: 1px;
-              text-transform: uppercase;
-              color: #00d1ff; /* Matches your signature blue */
-            }
-
-            /* --- Modal / Pop-up Image Stylings --- */
-            #fullImage {
-              max-width: 90%;
-              max-height: 85vh;
-              object-fit: contain;
-              /* This shadow helps the image "float" over the dark background */
-              box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-              /* This cyan border matches your header's "glow" lines */
-              border: 2px solid #00d1ff;
-            }
-
-            /* Only happens on laptops, not phones. Left Header */
-
-            /*@media (min-width: 992px) {
-              body {
-                display: flex;
-                align-items: flex-start;
-              }
-
-              header {
-                width: 300px;
-                height: 100vh;
-                position: sticky;
-                top: 0;
-                left: 0;
-                overflow-y: auto;
-                flex-shrink: 0;
-              }
-
-              main {
-                flex-grow: 1;
-                padding: 40px;
-              }
-            }*/
-
-            /*@media (min-width: 992px) {
-              body {
-                display: flex;
-                flex-direction: row;
-                align-items: flex-start;
-                margin: 0;
-                background-color: #f5f5f5;
-              }
-
-              header {
-                width: 300px;
-                height: 100vh;
-                position: sticky;
-                top: 0;
-                flex-shrink: 0;
-                z-index: 10;
-              }
-
-              main {
-                flex-grow: 1;
-                display: flex;
-                flex-direction: column;
-                padding: 40px;
-                gap: 30px;
-              }
-            } */
-
-            /* --- Dashboard Layout Fixes --- */
-            /*@media (min-width: 992px) {
-              body {
-                display: flex;
-                flex-direction: row;
-                margin: 0;
-                padding-top: 60px;
-              }
-
-              header {
-                width: 260px;
-                height: calc(100vh - 60px);
-                position: fixed;
-                top: 60px;
-                left: 0;
-                overflow: hidden;
-                z-index: 5;
-                padding: 20px;
-              }
-
-              main {
-                margin-left: 260px;
-                width: calc(100% - 260px);
-                padding: 40px;
-              }
-            }*/
-
-            /* This aligns header and main side-by-side */
-             /*@media (min-width: 992px) {
-
-              .page-container {
-                display: flex;
-                margin-top: 60px;
-                min-height: calc(100vh - 60px);
-              }
-
-              header {
-                width: 280px;
-                height: calc(100vh - 60px);
-                position: sticky;
-                top: 60px;
-                overflow-y: auto;
-                flex-shrink: 0;
-              }
-
-              main {
-                flex-grow: 1;
-                padding: 40px;
-
-                display: block;
-              }
-            }-->*/
-
-            /* @media (min-width: 992px) {
-              body {
-                display: grid;
-
-                grid-template-columns: 280px 1fr;
-
-                grid-template-rows: 60px 1fr auto;
-                margin: 0;
-                height: 100vh;
-              }
-
-
-              nav {
-
-                grid-row: 1;
-                position: sticky;
-                top: 0;
-                z-index: 1000;
-                background: rgba(255, 255, 255, 0.8);
-                backdrop-filter: blur(10px);
-                border-bottom: 1px solid rgba(0, 74, 153, 0.1);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-              }
-
-
-              header {
-                grid-column: 1;
-                grid-row: 1 / 4;
-                position: sticky;
-                top: 0;
-                height: 100vh;
-                overflow: hidden;
-                z-index: 10;
-              }
-
-
-              main {
-                grid-column: 2;
-                grid-row: 2;
-                padding: 40px;
-                overflow-y: auto;
-              }
-
-
-              footer {
-                grid-column: 2;
-                grid-row: 3;
-                background: #001a33;
-                padding: 20px;
-                text-align: center;
-              }
-            }*/
-
-            /*@media (min-width: 992px) {
-
-              main {
-                width: 100% !important;
-                max-width: none !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: stretch !important;
-                padding: 60px !important;
-              }
-
-
-              section {
-                width: 100% !important;
-                max-width: 1100px !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-              }
-
-
-              header {
-                min-width: 280px !important;
-                width: 280px !important;
-              }
-            }*/
-
-            /*@media (min-width: 992px) {
-              body {
-                display: flex !important;
-                flex-direction: row !important;
-                align-items: flex-start !important;
-                margin: 0;
-                min-height: 100vh;
-              }
-
-              header {
-                width: 280px !important;
-                min-width: 280px !important;
-                height: 100vh !important;
-                position: sticky !important;
-                top: 0;
-                flex-shrink: 0;
-              }
-
-              main {
-                flex-grow: 1;
-                display: block !important;
-                padding: 60px !important;
-                max-width: calc(100% - 280px);
-              }
-            }*/
-
-            @media (min-width: 992px) {
-              body {
-                display: flex !important;
-                margin: 0;
-                background-color: #f5f5f5; /* Your light grey body color */
-              }
-
-              /* 1. THE SIDEBAR: Sleeker and Fixed */
-              header {
-                width: 260px !important;
-                min-width: 260px !important;
-                height: 100vh !important;
-                position: sticky !important;
-                top: 0;
-                /*overflow-y: auto;*/ /* Allows the sidebar itself to scroll if the quote is long */
-                overflow-x: hidden;
-                flex-shrink: 0;
-                z-index: 1001; /* Higher than the nav so it clips perfectly */
-              }
-
-              /* Fix for the quote inside the sidebar so it doesn't cut off */
-              .site-quote {
-                padding: 15px !important;
-                font-size: 0.95rem !important;
-                margin: 20px 10px !important;
-              }
-
-              /* 2. THE NAV: Restore the Glass */
-              nav {
-                position: fixed !important;
-                top: 0;
-                right: 0;
-                width: calc(100% - 260px) !important; /* Starts EXACTLY where the sidebar ends */
-                height: 60px;
-                background: rgba(255, 255, 255, 0.7) !important; /* Semi-transparent */
-                backdrop-filter: blur(10px) !important; /* The Glass Effect */
-                -webkit-backdrop-filter: blur(10px);
-                z-index: 1000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-              }
-
-              /* 3. THE MAIN CONTENT: Aligned with the new Nav */
-              main {
-                flex-grow: 1;
-                margin-top: 60px; /* Space for the glass nav */
-                padding: 40px !important;
-                max-width: calc(100% - 260px);
-              }
-
-              /* 4. THE FOOTER: Fix the "Gap" and the "Awkward Big Bar" */
-              footer {
-                width: 100% !important;
-                background: #001a33 !important; /* Deep Navy */
-                padding: 20px 0 !important;
-                margin-top: 50px;
-                color: white;
-                font-size: 0.85rem;
-              }
-              @media (min-width: 992px) {
-              /* 1. Force Nav to reach the right edge */
-              nav {
-                width: calc(100% - 260px) !important;
-                right: 0 !important;
-                left: 260px !important; /* Forces it to start exactly after sidebar */
-              }
-
-              /* 2. THE "NO SCROLL" SIDEBAR FIX */
-              header {
-                overflow: hidden !important; /* Removes the sidebar scrollbar */
-                padding: 15px !important;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around; /* Spreads items out evenly to fit */
-              }
-
-              /* 3. FONT SHRINKING (Change these specific values) */
-              header h1 {
-                font-size: 2.0rem !important; /* Makes 'Ramir Mendigo' slightly smaller */
-                margin: 10px 0 !important;
-              }
-
-              header p {
-                font-size: 0.85rem !important; /* Shrinks the job title text */
-                line-height: 1.4 !important;
-              }
-
-              /* Shrink the Quote to fit the bottom */
-              .site-quote {
-                font-size: 0.8rem !important;
-                padding: 10px !important;
-                margin: 10px 0 !important;
-              }
-
-              /* Shrink the Photo slightly if needed */
-              header img {
-                width: 150px !important;
-                height: 150px !important;
-              }
-            }
-
-            }
-
-            @media (min-width: 992px) {
-        /* 1. Make Name Bigger and move it closer to photo */
+      /* Site Quote */
+      .site-quote {
+        max-width: 260px;
+        margin: 20px auto;
+        padding: 15px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-left: 4px solid #00d1ff;
+        border-radius: 8px;
+        color: #ffffff;
+        font-family: "Georgia", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Tableau specific */
+      .tableauPlaceholder {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .tableauViz {
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Responsive */
+      @media (max-width: 991px) {
+        header {
+          position: relative;
+          width: 100%;
+          height: auto;
+          padding: 3rem 1rem;
+        }
+        nav {
+          position: relative;
+          left: 0;
+          width: 100%;
+          background: rgba(255, 255, 255, 0.95);
+        }
+        main {
+          margin-left: 0;
+          padding-top: 0;
+        }
+        footer {
+          margin-left: 0;
+        }
+        .project-title-wrap h3 {
+          font-size: 1.2rem;
+        }
+        .engineering-frame {
+          height: auto !important;
+        }
+        .engineering-frame img {
+          height: 250px !important;
+          object-fit: cover !important;
+          object-position: center;
+        }
+        .project-caption {
+          position: relative !important;
+          background: #001a33 !important;
+          padding: 15px !important;
+          height: auto !important;
+        }
+        .project-caption h4 {
+          font-size: 0.9rem !important;
+        }
+        .project-caption p {
+          font-size: 0.75rem !important;
+        }
+      }
+
+      @media (max-width: 768px) {
         header h1 {
-          font-size: 1.8rem !important; /* Slightly larger name */
-          margin-top: 10px !important;
-          margin-bottom: 5px !important; /* Reduces gap below name */
+          font-size: 1.8rem;
         }
-
-        /* 2. Pull Title closer to photo */
-        header p:first-of-type {
-          margin-top: 0 !important;
-          margin-bottom: 10px !important;
-          font-weight: 500;
+        nav a {
+          margin: 0.5rem;
+          font-size: 0.85rem;
         }
-
-        /* 3. Reduce size of Location/Contact info */
-        header p {
-          font-size: 0.8rem !important; /* Smaller text for Dubai/Contact */
-          margin: 5px 0 !important;
-          opacity: 0.9; /* Softens the color so it doesn't compete with your name */
+        h2 {
+          font-size: 1.8rem;
         }
-
-        /* 4. Tweak the Photo spacing */
-        header img {
-          margin-bottom: 10px !important;
+        section {
+          padding: 0 1rem;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
         }
       }
-@media (max-width: 991px) {
-  /* 1. Reset the Main container so it's not 'pushed' to the right */
-  main {
-    margin-left: 0 !important;
-    padding: 20px !important;
-    width: 100% !important;
-    display: block !important;
-  }
-
-  /* 2. Make all sections (About, Skills, etc.) take the full width */
-  section {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 0 30px 0 !important;
-    padding: 0 !important;
-  }
-
-  /* 3. Center the Nav links so they don't look 'cut off' */
-  nav {
-    overflow-x: auto; /* Allows users to swipe the menu left/right */
-    white-space: nowrap;
-    justify-content: flex-start !important;
-    padding: 10px !important;
-  }
-  /* --- Professional Mobile Swipable Nav --- */
-nav {
-  display: flex !important;
-  flex-wrap: nowrap !important; /* Prevents links from dropping to a second line */
-  overflow-x: auto !important; /* Enables the horizontal swipe */
-  -webkit-overflow-scrolling: touch; /* Makes the swipe feel "rubbery" and smooth on iPhones */
-  padding: 15px 10px !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(10px);
-  gap: 20px; /* Space between links so they are easy to tap */
-  border-bottom: 1px solid rgba(0, 74, 153, 0.1);
-}
-
-/* Hide the ugly scrollbar but keep the swipe working */
-nav::-webkit-scrollbar {
-  display: none;
-}
-
-nav a {
-  flex: 0 0 auto; /* Prevents the text from squishing */
-  font-size: 0.9rem !important;
-  font-weight: 500;
-  color: #004a99 !important; /* Your professional blue */
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-}
-
-/* --- Fix for Project Cards on Mobile --- */
-.engineering-frame {
-  height: auto !important; /* Let the height grow based on content */
-  margin-bottom: 20px;
-}
-
-.engineering-frame img {
-  height: 250px !important; /* Fixed height for mobile to keep it consistent */
-  object-fit: cover !important; /* Crops the image nicely instead of squishing it */
-  object-position: center;
-}
-
-.project-caption {
-  position: relative !important; /* Moves caption BELOW image on small screens */
-  background: #001a33 !important; /* Your signature deep blue */
-  padding: 15px !important;
-  height: auto !important;
-}
-
-.project-caption h4 {
-  font-size: 0.9rem !important; /* Shorter titles for small screens */
-  margin-bottom: 5px !important;
-}
-
-.project-caption p {
-  font-size: 0.75rem !important;
-  line-height: 1.4 !important;
-}
-
-
-             /* Fixes the Top Menu Bar */
-              nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 60px;         /* Fixed height for the menu */
-                background: #ffffff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 100;         /* Keeps menu on top of everything */
-                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-              }
     </style>
   </head>
 
   <body>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#soft-skills">Soft Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
     <header>
       <h1>Ramir Mendigo</h1>
       <img
         src="Ramir2.jpg"
         alt="Ramir Mendigo"
         style="
-          width: 150px;
-          height: 150px;
+          width: 120px;
+          height: 120px;
           border-radius: 50%;
           border: 4px solid white;
           margin: 1rem auto;
@@ -1067,8 +648,8 @@ nav a {
         & Data Science
       </p>
       <div class="contact-info">
-        Dubai, UAE •
-        <a href="mailto:solace5710@gmail.com">solace5710@gmail.com</a> •
+        <p>Dubai, UAE</p>
+        <a href="mailto:solace5710@gmail.com">solace5710@gmail.com</a>
         <a href="https://www.linkedin.com/in/ramirmendigo567" target="_blank"
           >LinkedIn</a
         >
@@ -1077,10 +658,21 @@ nav a {
         </blockquote>
       </div>
     </header>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#soft-skills">Soft Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
     <main>
       <section id="about">
         <h2>About Me</h2>
-        <div class="project-section">
+        <div class="project-card">
           <p>
             Experienced Operations Supervisor with over 10 years leading teams
             and optimizing processes in hospitality, healthcare, and
@@ -1100,7 +692,7 @@ nav a {
 
       <section id="skills">
         <h2>Key Skills & Tools</h2>
-        <div class="project-section">
+        <div class="project-card">
           <div class="skills-grid">
             <div class="skill-box">Excel (Advanced)</div>
             <div class="skill-box">SQL</div>
@@ -1116,7 +708,7 @@ nav a {
 
       <section id="soft-skills">
         <h2>Soft Skills</h2>
-        <div class="project-section">
+        <div class="project-card">
           <div class="skills-grid">
             <div class="skill-box">Leadership & Team Oversight</div>
             <div class="skill-box">Problem Solving & Adaptability</div>
@@ -1130,7 +722,7 @@ nav a {
 
       <section id="experience">
         <h2>Work Experience</h2>
-        <div class="project-section">
+        <div class="project-card">
           <div class="job">
             <h3>Operations Supervisor</h3>
             <p class="company">FnB Project Management Services – Dubai</p>
@@ -1256,26 +848,138 @@ nav a {
       <section id="projects">
         <h2>Selected Projects</h2>
 
+        <!-- NutriTrack -->
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">🥗</div>
+            <div class="project-title-wrap">
+              <h3>NutriTrack – Personal Nutrition Tracker</h3>
+              <p>
+                Privacy-first PWA • Local data storage • Real-time macro
+                tracking • Built with vanilla JS
+              </p>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            NutriTrack is a high-performance Progressive Web App (PWA) designed
+            to streamline nutritional tracking through a "privacy-first"
+            architecture. Developed as a custom solution to support a rigorous
+            fitness regimen, the application eliminates the common latency of
+            third-party food databases by utilizing a locally indexed library of
+            favorites and user-defined entries.
+          </p>
+
+          <div class="viz-container aspect-4-5 md-aspect-16-9">
+            <iframe
+              src="https://r-mendigo.github.io/my-nutritrack/"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              allowfullscreen
+              title="NutriTrack – Personal Nutrition Tracker"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p class="viz-caption">
+            Interactive Nutrition Tracker • Built with HTML5, CSS3, JavaScript
+            ES6+ • LocalStorage API
+          </p>
+
+          <details>
+            <summary>About this Project</summary>
+            <div>
+              <p>
+                <strong>Tools:</strong> HTML5, CSS3 (Tailwind CSS), JavaScript
+                (ES6+), and the LocalStorage API
+              </p>
+              <p><strong>Role:</strong> Lead Developer and Data Architect</p>
+              <p>
+                <strong>Goal:</strong> To build a zero-latency nutrition tracker
+                that functions offline and prioritizes local data privacy.
+              </p>
+
+              <p><strong>Objectives:</strong></p>
+              <ul>
+                <li>
+                  Eliminate reliance on slow external APIs by building a custom
+                  local food database.
+                </li>
+                <li>
+                  Create a seamless "Search → Click → Add" workflow for
+                  multi-meal tracking (Breakfast, Lunch, Snack, Dinner).
+                </li>
+                <li>
+                  Implement real-time macro calculation and historical data
+                  persistence without a back-end server.
+                </li>
+              </ul>
+
+              <p><strong>Implementation:</strong></p>
+              <ul>
+                <li>
+                  Data Persistence: Leveraged localStorage for instant data
+                  retrieval and Day Streak maintenance.
+                </li>
+                <li>
+                  Automation: Built a dynamic search engine that indexes local
+                  favorites and custom user libraries.
+                </li>
+                <li>
+                  Visual Analytics: Integrated a progress reporting system to
+                  track caloric and protein trends.
+                </li>
+              </ul>
+
+              <p><strong>Key Metrics Displayed:</strong></p>
+              <ul>
+                <li>
+                  Personal Success: Successfully supported a weight loss journey
+                  from 96 kg to 77.3 kg.
+                </li>
+                <li>
+                  System Performance: Reduced search latency from over 5 seconds
+                  (external API) to under 10ms (local indexing).
+                </li>
+                <li>
+                  Consistency: Maintained a 100-day fitness and nutrition
+                  streak.
+                </li>
+              </ul>
+
+              <p><strong>How to Use</strong></p>
+              <ol>
+                <li>Type a food item in the search bar.</li>
+                <li>
+                  Click the result to automatically inject it into the active
+                  meal section.
+                </li>
+                <li>
+                  Use the "Save Day" button to archive data and "Your Report" to
+                  view progress charts.
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+
         <!-- Power BI -->
-        <div
-          class="project-section"
-          style="
-            margin: 2rem auto;
-            max-width: 1000px;
-            border: 1px solid #e5e7eb;
-            border-left: 5px solid var(--primary);
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-          "
-        >
-          <h3>
-            SaaS Subscription Cohort Analysis – Churn & Revenue Retention Study
-            (Power BI) (Feb 2026)
-          </h3>
-          <p style="margin-bottom: 1.5rem">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">📊</div>
+            <div class="project-title-wrap">
+              <h3>
+                SaaS Subscription Cohort Analysis – Churn & Revenue Retention
+                Study
+              </h3>
+              <p>
+                Power BI Dashboard • Cohort Analysis • DAX Measures • Business
+                Intelligence
+              </p>
+            </div>
+          </div>
+
+          <p class="project-desc">
             This Power BI project uses cohort analysis to reveal how a high 95%
             paid conversion rate is being offset by significant customer and
             revenue churn. I transformed these complex subscription trends into
@@ -1283,14 +987,7 @@ nav a {
             aggressive acquisition to sustainable, retention-led growth.
           </p>
 
-          <!-- Placeholder screenshot (upload your image as fnb-screenshot.jpg or change the src) -->
-          <!-- <div style="margin: 1.5rem 0; text-align: center;">
-    <img src="subscription_cohort_dashboard.png" alt="Subscription Cohort Dashboard" class="clickable-img" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    
-  </div>-->
-
-          <div style="margin: 2rem 0; text-align: center">
-            <!-- We added 'onclick' to trigger the modal instead of just a link -->
+          <div class="viz-container aspect-16-9">
             <div
               class="dashboard-frame"
               onclick="openModal('subscription_cohort_dashboard.png')"
@@ -1300,41 +997,12 @@ nav a {
                 alt="SaaS Cohort Dashboard"
               />
             </div>
-            <p
-              style="
-                margin-top: 10px;
-                font-size: 0.85rem;
-                color: #666;
-                font-style: italic;
-              "
-            >
-              (Click image to expand view)
-            </p>
           </div>
+          <p class="viz-caption">Click image to expand view</p>
 
-          <!-- This is the hidden "Modal" structure that pops up -->
-          <div id="imageModal" class="modal" onclick="closeModal()">
-            <span class="close-modal">&times;</span>
-            <img class="modal-content" id="fullImage" />
-          </div>
-
-          <!-- <div class="dashboard-frame">
-  <img src="subscription_cohort_dashboard.png" alt="SaaS Cohort Dashboard">
-</div>-->
-
-          <!-- Collapsible About this Project -->
-          <details style="margin-top: 1.5rem">
-            <summary
-              style="
-                color: var(--primary);
-                font-weight: 600;
-                cursor: pointer;
-                font-size: 1.1rem;
-              "
-            >
-              About this Project
-            </summary>
-            <div style="margin-top: 1rem; padding: 0.8rem 0 2rem 0">
+          <details>
+            <summary>About this Project</summary>
+            <div>
               <p>
                 <strong>Tools:</strong> Power BI Desktop, DAX, Data Modeling,
                 Cohort Analysis Techniques
@@ -1343,9 +1011,8 @@ nav a {
                 <strong>Role:</strong> Data Analyst (End-to-End Dashboard
                 Design, Data Modeling & Business Interpretation)
               </p>
-
               <p>
-                <strong>Goal:</strong>To analyze subscription performance using
+                <strong>Goal:</strong> To analyze subscription performance using
                 cohort analysis and evaluate the impact of customer churn on
                 revenue growth and retention.
               </p>
@@ -1403,7 +1070,7 @@ nav a {
               </ul>
 
               <p><strong>Recommendations:</strong></p>
-              <ol style="margin-bottom: 2.5rem">
+              <ol>
                 <li>
                   Despite strong paid conversion (95%), high customer and
                   revenue churn (~65–67%) significantly limits long-term growth.
@@ -1422,23 +1089,20 @@ nav a {
           </details>
         </div>
 
-        <!-- Cyclistic – contained -->
-        <div
-          class="project-section"
-          style="
-            margin: 2rem auto;
-            max-width: 1000px;
-            border: 1px solid #e5e7eb;
-            border-left: 5px solid var(--primary);
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-          "
-        >
-          <h3>Cyclistic Bike Share Analysis (Feb 2024)</h3>
-          <p style="margin-bottom: 1.5rem">
+        <!-- Cyclistic Bike Share -->
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">🚴</div>
+            <div class="project-title-wrap">
+              <h3>Cyclistic Bike Share Analysis</h3>
+              <p>
+                Tableau Dashboard • Excel Analysis • Member vs Casual Rider
+                Behavior • Google Capstone
+              </p>
+            </div>
+          </div>
+
+          <p class="project-desc">
             <i
               >Capstone Project for Google Data Analytics Professional
               Certificate</i
@@ -1448,70 +1112,63 @@ nav a {
             recommended strategies to increase annual memberships.
           </p>
 
-          <!-- Tableau Embed -->
-          <div
-            class="tableauPlaceholder"
-            id="viz1772559721130"
-            style="
-              position: relative;
-              width: 100%;
-              height: 0;
-              padding-bottom: 82.7%;
-            "
-          >
-            <noscript>
-              <a href="#">
-                <img
-                  alt="Cyclistic Bike Rides 2023"
-                  src="https://public.tableau.com/static/images/Cy/CyclisticBike2023_1/Dashboard1/1_rss.png"
-                  style="border: none"
+          <div class="viz-container aspect-16-9">
+            <div class="tableauPlaceholder" id="viz1772559721130">
+              <noscript>
+                <a href="#">
+                  <img
+                    alt="Cyclistic Bike Rides 2023"
+                    src="https://public.tableau.com/static/images/Cy/CyclisticBike2023_1/Dashboard1/1_rss.png"
+                    style="border: none"
+                  />
+                </a>
+              </noscript>
+              <object
+                class="tableauViz"
+                style="display: none; width: 100%; height: 100%"
+              >
+                <param
+                  name="host_url"
+                  value="https%3A%2F%2Fpublic.tableau.com%2F"
                 />
-              </a>
-            </noscript>
-            <object
-              class="tableauViz"
-              style="display: none; width: 100%; height: 100%"
-            >
-              <param
-                name="host_url"
-                value="https%3A%2F%2Fpublic.tableau.com%2F"
-              />
-              <param name="embed_code_version" value="3" />
-              <param name="site_root" value="" />
-              <param name="name" value="CyclisticBike2023_1/Dashboard1" />
-              <param name="tabs" value="no" />
-              <param name="toolbar" value="yes" />
-              <param
-                name="static_image"
-                value="https://public.tableau.com/static/images/Cy/CyclisticBike2023_1/Dashboard1/1.png"
-              />
-              <param name="animate_transition" value="yes" />
-              <param name="display_static_image" value="yes" />
-              <param name="display_spinner" value="yes" />
-              <param name="display_overlay" value="yes" />
-              <param name="display_count" value="yes" />
-              <param name="language" value="en-US" />
-              <param name="filter" value="publish=yes" />
-            </object>
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="CyclisticBike2023_1/Dashboard1" />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param
+                  name="static_image"
+                  value="https://public.tableau.com/static/images/Cy/CyclisticBike2023_1/Dashboard1/1.png"
+                />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-US" />
+                <param name="filter" value="publish=yes" />
+              </object>
+            </div>
           </div>
+          <p class="viz-caption">
+            Interactive Tableau dashboard • Explore ride patterns, seasonal
+            trends, and user behavior
+          </p>
 
           <script type="text/javascript">
             var divElement = document.getElementById("viz1772559721130");
             var vizElement = divElement.getElementsByTagName("object")[0];
             vizElement.style.width = "100%";
-            var aspectRatio = 0.827;
-            vizElement.style.height =
-              divElement.offsetWidth * aspectRatio + "px";
+            vizElement.style.height = "100%";
             var scriptElement = document.createElement("script");
             scriptElement.src =
               "https://public.tableau.com/javascripts/api/viz_v1.js";
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
           </script>
 
-          <!-- Collapsible About -->
           <details>
             <summary>About this Project</summary>
-            <div style="margin-top: 0.8rem">
+            <div>
               <p><strong>Tools:</strong> Tableau, Excel</p>
               <p><strong>Role:</strong> Sole Contributor</p>
               <p>
@@ -1561,7 +1218,7 @@ nav a {
               </ul>
 
               <p><strong>Recommendations:</strong></p>
-              <ol style="margin-bottom: 2.5rem">
+              <ol>
                 <li>
                   Improve ride efficiency by analyzing long ride durations
                 </li>
@@ -1579,56 +1236,44 @@ nav a {
           </details>
         </div>
 
-        <!-- Data Science Project – contained -->
-        <div
-          class="project-section"
-          style="
-            margin: 2rem auto;
-            max-width: 1000px;
-            border: 1px solid #e5e7eb;
-            border-left: 5px solid var(--primary);
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-          "
-        >
-          <h3>Data Science Jobs & Salaries (Feb 2024)</h3>
-          <p style="margin-bottom: 1.5rem">
+        <!-- Data Science Jobs & Salaries -->
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">💼</div>
+            <div class="project-title-wrap">
+              <h3>Data Science Jobs & Salaries Analysis</h3>
+              <p>
+                SQL • Excel • Tableau • Global Salary Benchmarking • Workforce
+                Planning
+              </p>
+            </div>
+          </div>
+
+          <p class="project-desc">
             SQL + Excel + Tableau analysis of global salaries across 70+
             countries. Created interactive dashboard for benchmarking and
             workforce planning.
           </p>
 
-          <div
-            style="
-              width: 100%;
-              margin-top: 2rem;
-              border-top: 1px solid #e5e7eb;
-              padding-top: 1.5rem;
-            "
-          >
+          <div class="viz-container aspect-16-9">
             <iframe
               src="https://public.tableau.com/views/JobsSalaryinDataScience/Dashboard1?:embed=y&:showVizHome=no&:toolbar=yes&:display_count=yes&:language=en-US&:device=desktop"
               width="100%"
-              height="800px"
+              height="100%"
               frameborder="0"
               allowfullscreen
-              style="
-                border: none;
-                display: block;
-                width: 100%;
-                min-height: 800px;
-              "
-            >
-              <param name="device" value="phone" />
-            </iframe>
+              title="Jobs Salary in Data Science Dashboard"
+              loading="lazy"
+            ></iframe>
           </div>
-          <!-- Collapsible About -->
+          <p class="viz-caption">
+            Interactive Tableau dashboard • Explore salary ranges, role
+            comparisons, and industry insights
+          </p>
+
           <details>
             <summary>About this Project</summary>
-            <div style="margin-top: 0.8rem">
+            <div>
               <p><strong>Tools:</strong> SQL, Tableau, Excel</p>
               <p><strong>Role:</strong> Data Analyst</p>
               <p>
@@ -1674,7 +1319,7 @@ nav a {
               </ul>
 
               <p><strong>Recommendations:</strong></p>
-              <ol style="margin-bottom: 2.5rem">
+              <ol>
                 <li>
                   Job Market Trends: A rising job count and high job
                   availability suggests a strong, growing demand for data
@@ -1703,76 +1348,46 @@ nav a {
         </div>
 
         <!-- FnB Project -->
-        <div
-          class="project-section"
-          style="
-            margin: 2rem auto;
-            max-width: 1000px;
-            border: 1px solid #e5e7eb;
-            border-left: 5px solid var(--primary);
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-          "
-        >
-          <h3>FnB Project Management Website (Nov 2023)</h3>
-          <p style="margin-bottom: 1.5rem">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">🌐</div>
+            <div class="project-title-wrap">
+              <h3>FnB Project Management Website</h3>
+              <p>
+                Web Design • SEO Optimization • Wix Platform • Digital Strategy
+              </p>
+            </div>
+          </div>
+
+          <p class="project-desc">
             Developed the official company website using Wix as the main
             platform, with custom HTML/CSS enhancements and full SEO
             optimization.
           </p>
 
-          <!-- Placeholder screenshot (upload your image as fnb-screenshot.jpg or change the src) -->
-          <!--<div style="margin: 1.5rem 0; text-align: center">
-          <img
-            src="FnB.png"
-            alt="Project screenshot" class="clickable-img" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"/>
-          <p style="margin-top: 0.8rem; font-style: italic; color: var(--gray)">
-            Screenshot of the live website (now offline due to company closure)
-          </p>
-        </div>-->
-
-          <div style="margin: 3rem 0; text-align: center">
-            <div
-              class="engineering-frame"
-              onclick="openModal('FnB.png')"
-              style="cursor: pointer"
-            >
+          <div class="viz-container aspect-16-9">
+            <div class="engineering-frame" onclick="openModal('FnB.png')">
               <img src="FnB.png" alt="FnB Project Management Services" />
-
-              <!-- The Blueprint Caption -->
               <div class="project-caption">
                 <h4>Operational Infrastructure & Web Presence</h4>
-                <p style="margin: 5px 0 0; font-size: 0.8rem; opacity: 0.8">
+                <p>
                   Operations Management • Digital Strategy • UAE Theme Park
                   Maintenance
                 </p>
               </div>
             </div>
           </div>
+          <p class="viz-caption">Click image to view full size</p>
 
-          <!-- Collapsible About this Project -->
-          <details style="margin-top: 1.5rem">
-            <summary
-              style="
-                color: var(--primary);
-                font-weight: 600;
-                cursor: pointer;
-                font-size: 1.1rem;
-              "
-            >
-              About this Project
-            </summary>
-            <div style="margin-top: 1rem; padding: 0.8rem 0 2rem 0">
+          <details>
+            <summary>About this Project</summary>
+            <div>
               <p><strong>Tools:</strong> Wix, HTML, Google Search Console</p>
               <p><strong>Role:</strong> Web Designer & SEO Coordinator</p>
-
               <p>
                 <strong>Goal:</strong> To design and launch the official website
                 of FnB Project Management Services, and implement SEO strategies
-                to improve the company’s visibility and indexing on Google.
+                to improve the company's visibility and indexing on Google.
               </p>
 
               <p><strong>Project Summary:</strong></p>
@@ -1780,7 +1395,7 @@ nav a {
                 In this project, I collaborated closely with the client to
                 understand their brand identity, service offerings, and
                 functional requirements. Using Wix, I designed and developed a
-                responsive, user-friendly website aligned with the company’s
+                responsive, user-friendly website aligned with the company's
                 image and operations.
               </p>
               <p>
@@ -1802,7 +1417,7 @@ nav a {
 
       <section id="education">
         <h2>Education & Certifications</h2>
-        <div class="project-section">
+        <div class="project-card">
           <p>
             <strong
               >Professional Certificate in Advanced Data Analytics
@@ -1815,7 +1430,7 @@ nav a {
             / Coursera (Sep 2023 – Feb 2024)
           </p>
           <p>
-            <strong>Bachelor’s in Computer Science</strong> – AMA Computer
+            <strong>Bachelor's in Computer Science</strong> – AMA Computer
             University, Manila (1998–2001)
           </p>
           <p>
@@ -1827,12 +1442,11 @@ nav a {
 
       <section id="contact">
         <h2>Contact Me</h2>
-        <div class="project-section" style="text-align: center">
+        <div class="project-card" style="text-align: center">
           <p>
             <strong>Email:</strong>
             <a href="mailto:solace5710@gmail.com">solace5710@gmail.com</a>
           </p>
-          <!-- <p><strong>Phone:</strong> +971 56 237 9184</p>-->
           <p>
             <strong>LinkedIn:</strong>
             <a
@@ -1851,22 +1465,30 @@ nav a {
         </p>
       </footer>
 
-      <!-- Lightbox container -->
+      <!-- Modal -->
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="fullImage" />
+      </div>
+
+      <!-- Lightbox -->
       <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
         <span class="close-lightbox" onclick="closeLightbox(event)">×</span>
         <img class="lightbox-content" id="lightbox-img" />
       </div>
 
       <script>
-        // Open lightbox
-        document.querySelectorAll(".clickable-img").forEach((img) => {
-          img.addEventListener("click", function () {
-            document.getElementById("lightbox-img").src = this.src;
-            document.getElementById("lightbox").style.display = "block";
-          });
-        });
+        // Modal functions
+        function openModal(imgSrc) {
+          document.getElementById("imageModal").style.display = "block";
+          document.getElementById("fullImage").src = imgSrc;
+        }
 
-        // Close lightbox
+        function closeModal() {
+          document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Lightbox functions
         function closeLightbox(e) {
           if (
             e.target.id === "lightbox" ||
@@ -1880,85 +1502,30 @@ nav a {
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape") {
             document.getElementById("lightbox").style.display = "none";
+            document.getElementById("imageModal").style.display = "none";
           }
         });
-      </script>
 
-      <script>
-        // Auto-collapse <details> AFTER the user has scrolled PAST it
+        // Auto-collapse details
         const detailsElements = document.querySelectorAll("details");
-
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-              // Only auto-collapse if it is currently open AND fully scrolled past (not intersecting)
               if (!entry.isIntersecting && entry.target.open === true) {
-                entry.target.open = false; // Collapse it
+                entry.target.open = false;
               }
             });
           },
           {
-            threshold: 0.01, // Triggers when almost nothing is visible
-            rootMargin: "0px 0px 100% 0px", // Triggers when element is completely above viewport (scrolled past)
+            threshold: 0.01,
+            rootMargin: "0px 0px 100% 0px",
           },
         );
 
         detailsElements.forEach((detail) => {
           observer.observe(detail);
         });
-
-        // Optional: If user manually expands it, respect that for a moment — but observer will close it later
-        detailsElements.forEach((detail) => {
-          detail.addEventListener("toggle", () => {
-            // User interacted — no extra action needed, observer will handle later
-          });
-        });
-      </script>
-
-      <!-- Embed Lightbox Container -->
-      <div id="embedLightbox" class="embed-lightbox">
-        <span class="close-embed" onclick="closeEmbedLightbox()">×</span>
-        <div class="embed-lightbox-content" id="embedContent"></div>
-      </div>
-
-      <script>
-        function openEmbedLightbox(src) {
-          const content = document.getElementById("embedContent");
-          content.innerHTML = `<iframe src="${src}" allowfullscreen></iframe>`;
-          document.getElementById("embedLightbox").classList.add("active");
-        }
-
-        function closeEmbedLightbox() {
-          document.getElementById("embedLightbox").classList.remove("active");
-          document.getElementById("embedContent").innerHTML = "";
-        }
-
-        // Attach click handler to all embed wrappers
-        document.querySelectorAll(".embed-wrapper").forEach((wrapper) => {
-          wrapper.addEventListener("click", () => {
-            const iframe = wrapper.querySelector("iframe");
-            if (iframe) {
-              openEmbedLightbox(iframe.src);
-            }
-          });
-        });
-      </script>
-
-      <script>
-        function openModal(imgSrc) {
-          document.getElementById("imageModal").style.display = "block";
-          document.getElementById("fullImage").src = imgSrc;
-        }
-
-        function closeModal() {
-          document.getElementById("imageModal").style.display = "none";
-        }
       </script>
     </main>
   </body>
 </html>
-
-
-
-
-
