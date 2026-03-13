@@ -387,7 +387,7 @@
         opacity: 1;
       }
 
-      .project-caption {
+  /*    .project-caption {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -412,6 +412,23 @@
         margin: 5px 0 0;
         font-size: 0.8rem;
         opacity: 0.9;
+      }*/
+
+       .project-caption {
+        position: relative !important; /* Moves caption BELOW image on small screens */
+        background: #001a33 !important; /* Your signature deep blue */
+        padding: 15px !important;
+        height: auto !important;
+      }
+
+      .project-caption h4 {
+        font-size: 0.9rem !important; /* Shorter titles for small screens */
+        margin-bottom: 5px !important;
+      }
+
+      .project-caption p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
       }
 
       /* Dashboard Frame for Power BI */
@@ -600,7 +617,7 @@
           object-fit: cover !important;
           object-position: center;
         }
-        .project-caption {
+       /* .project-caption {
           position: relative !important;
           background: #001a33 !important;
           padding: 15px !important;
@@ -611,6 +628,35 @@
         }
         .project-caption p {
           font-size: 0.75rem !important;
+        }*/
+
+        /* Glassmorphism Title Overlay */
+        .project-caption {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.6);
+          backdrop-filter: blur(10px);
+          color: white;
+          padding: 15px 20px;
+          text-align: left;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          background: rgba(
+            0,
+            74,
+            153,
+            0.85
+          ); /* Use your signature professional blue! */
+          color: #ffffff; /* White text for high contrast */
+          border-top: 2px solid #00d1ff;
+        }
+
+        .project-caption h4 {
+          margin: 0;
+          font-size: 1rem;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: #00d1ff; /* Matches your signature blue */
         }
       }
 
@@ -1537,6 +1583,7 @@
     </main>
   </body>
 </html>
+
 
 
 
