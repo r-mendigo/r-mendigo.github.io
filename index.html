@@ -367,7 +367,7 @@
       }
 
       /* Engineering Frame for FnB */
-      .engineering-frame {
+   /*   .engineering-frame {
         position: relative;
         width: 100%;
         height: 100%;
@@ -385,7 +385,7 @@
 
       .engineering-frame:hover img {
         opacity: 1;
-      }
+      }*/
 
   /*    .project-caption {
         position: absolute;
@@ -414,6 +414,16 @@
         opacity: 0.9;
       }*/
 
+      .engineering-frame {
+        height: auto !important; /* Let the height grow based on content */
+        margin-bottom: 20px;
+      }
+
+      .engineering-frame img {
+        height: 250px !important; /* Fixed height for mobile to keep it consistent */
+        object-fit: cover !important; /* Crops the image nicely instead of squishing it */
+        object-position: center;
+      }
        .project-caption {
         position: relative !important; /* Moves caption BELOW image on small screens */
         background: #001a33 !important; /* Your signature deep blue */
@@ -1583,6 +1593,7 @@
     </main>
   </body>
 </html>
+
 
 
 
