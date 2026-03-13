@@ -577,10 +577,26 @@
           padding: 3rem 1rem;
         }
         nav {
-          position: relative;
-          left: 0;
-          width: 100%;
-          background: rgba(255, 255, 255, 0.95);
+          position: fixed !important;
+          top: 0;
+          right: 0;
+          width: calc(
+            100% - 260px
+          ) !important; /* Starts EXACTLY where the sidebar ends */
+          height: 60px;
+          background: rgba(
+            255,
+            255,
+            255,
+            0.7
+          ) !important; /* Semi-transparent */
+          backdrop-filter: blur(10px) !important; /* The Glass Effect */
+          -webkit-backdrop-filter: blur(10px);
+          z-index: 1000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         main {
           margin-left: 0;
@@ -1537,4 +1553,5 @@
     </main>
   </body>
 </html>
+
 
