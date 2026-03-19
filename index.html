@@ -43,6 +43,10 @@
         line-height: 1.6;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       img {
         max-width: 100%;
         height: auto;
@@ -177,7 +181,13 @@
         padding: 0 2rem;
       }
 
-      #projects {
+      #about,
+      #skills,
+      #soft-skills,
+      #experience,
+      #projects,
+      #education,
+      #contact {
         scroll-margin-top: 90px;
       }
 
@@ -364,6 +374,19 @@
         }
       }
 
+      .nutritrack-frame {
+        height: 720px;
+        min-height: 720px;
+      }
+
+      .nutritrack-frame iframe {
+        width: 100%;
+        height: 100% !important;
+        min-height: 100%;
+        display: block;
+        border: none;
+      }
+
       .engineering-frame {
         position: relative;
         width: 100%;
@@ -447,6 +470,47 @@
 
       .dashboard-frame:hover img {
         transform: scale(1.01);
+      }
+
+      .tableauPlaceholder {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .tableauViz {
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+
+      .cyclistic-frame {
+        min-height: 900px;
+        height: 900px;
+      }
+
+      .cyclistic-frame .tableauPlaceholder {
+        width: 100%;
+        height: 100%;
+      }
+
+      .cyclistic-frame .tableauViz,
+      .cyclistic-frame object {
+        width: 100% !important;
+        height: 100% !important;
+        display: block;
+      }
+
+      .jobs-frame {
+        min-height: 950px;
+        height: 950px;
+      }
+
+      .jobs-frame iframe {
+        width: 100%;
+        height: 100% !important;
+        display: block;
+        border: none;
       }
 
       .modal {
@@ -557,18 +621,6 @@
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       }
 
-      .tableauPlaceholder {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
-
-      .tableauViz {
-        display: none;
-        width: 100%;
-        height: 100%;
-      }
-
       @media (max-width: 991px) {
         header {
           position: relative;
@@ -581,9 +633,11 @@
           position: sticky;
           top: 0;
           left: 0;
+          right: 0;
           width: 100%;
-          background: rgba(255, 255, 255, 0.62);
+          background: rgba(255, 255, 255, 0.72);
           padding: 0.9rem 0.75rem;
+          z-index: 2000;
         }
 
         main {
@@ -649,7 +703,7 @@
         }
 
         section {
-          padding: 0 1rem;
+          padding: 0 0.75rem;
         }
 
         .skills-grid {
@@ -670,7 +724,8 @@
         }
 
         .project-card {
-          padding: 1.2rem;
+          padding: 1rem;
+          margin: 1.25rem auto;
         }
 
         .aspect-16-9,
@@ -680,6 +735,22 @@
 
         .dashboard-frame img {
           height: auto;
+        }
+
+        .nutritrack-frame {
+          height: 78vh;
+          min-height: 700px;
+          max-height: 950px;
+        }
+
+        .cyclistic-frame {
+          height: 1100px;
+          min-height: 1100px;
+        }
+
+        .jobs-frame {
+          height: 1100px;
+          min-height: 1100px;
         }
       }
     </style>
@@ -915,7 +986,7 @@
             favorites and user-defined entries.
           </p>
 
-          <div class="viz-container aspect-4-5 md-aspect-16-9">
+          <div class="viz-container nutritrack-frame">
             <iframe
               src="https://r-mendigo.github.io/my-nutritrack/"
               width="100%"
@@ -1149,9 +1220,10 @@
             <i
               >Capstone Project for Google Data Analytics Professional
               Certificate</i
-            >  </p>
+            >
+          </p>
 
-          <div class="viz-container aspect-16-9">
+          <div class="viz-container cyclistic-frame">
             <div class="tableauPlaceholder" id="viz1772559721130">
               <noscript>
                 <a href="#">
@@ -1197,8 +1269,21 @@
           <script type="text/javascript">
             var divElement = document.getElementById("viz1772559721130");
             var vizElement = divElement.getElementsByTagName("object")[0];
-            vizElement.style.width = "100%";
-            vizElement.style.height = "100%";
+
+            function setCyclisticHeight() {
+              if (window.innerWidth <= 768) {
+                divElement.style.height = "1100px";
+                vizElement.style.height = "1100px";
+              } else {
+                divElement.style.height = "900px";
+                vizElement.style.height = "900px";
+              }
+              vizElement.style.width = "100%";
+            }
+
+            setCyclisticHeight();
+            window.addEventListener("resize", setCyclisticHeight);
+
             var scriptElement = document.createElement("script");
             scriptElement.src =
               "https://public.tableau.com/javascripts/api/viz_v1.js";
@@ -1293,9 +1378,9 @@
             workforce planning.
           </p>
 
-          <div class="viz-container aspect-16-9">
+          <div class="viz-container jobs-frame">
             <iframe
-              src="https://public.tableau.com/views/JobsSalaryinDataScience/Dashboard1?:embed=y&:showVizHome=no&:toolbar=yes&:display_count=yes&:language=en-US&:device=desktop"
+              src="https://public.tableau.com/views/JobsSalaryinDataScience/Dashboard1?:embed=y&:showVizHome=no&:toolbar=yes&:display_count=yes&:language=en-US"
               width="100%"
               height="100%"
               frameborder="0"
